@@ -3,64 +3,1960 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Maths - Leaving Cert 2025</title>
+  <title>Leaving Cert Higher Level Maths 2025 – Ultimate Revision Textbook</title>
+  
+  <!-- Google Fonts: Roboto -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  
+  <!-- Bootstrap CSS (CDN) -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  
+  <!-- MathJax for rendering math formulas -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
+  <style>
+    :root {
+      --primary-color: #1abc9c;
+      --secondary-color: #343a40;
+      --accent-color: #495057;
+      --background-color: #f8f9fa;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: var(--background-color);
+      color: var(--secondary-color);
+      margin: 0;
+      padding: 0;
+    }
+    /* Header Banner */
+    header.banner {
+      position: relative;
+      overflow: hidden;
+      height: 40vh;
+      background: none;
+    }
+    header.banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: 0;
+    }
+    header.banner .banner-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    header.banner .banner-content div {
+      border: 2px solid var(--primary-color);
+      background: rgba(255,255,255,0.8);
+      padding: 15px 25px;
+      border-radius: 4px;
+    }
+    header.banner .banner-content h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--secondary-color);
+      margin: 0;
+    }
+    header.banner .banner-content p {
+      font-size: 1rem;
+      color: var(--secondary-color);
+      margin: 10px 0 0;
+    }
+    /* Fixed Navigation */
+    nav.fixed-top {
+      background: var(--accent-color);
+      padding: 10px 0;
+      text-align: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    nav.fixed-top a {
+      color: #fff;
+      font-size: 1.1rem;
+      margin: 0 15px;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav.fixed-top a:hover {
+      color: var(--primary-color);
+    }
+    /* Main Content */
+    main.container {
+      margin-top: 100px;
+      padding-bottom: 40px;
+    }
+    /* Past Exam Papers Section */
+    .past-papers {
+      padding: 40px 20px;
+      background: #fff;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .past-papers h2 {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+    }
+    .past-papers p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    .past-papers ul {
+      list-style: none;
+      padding: 0;
+    }
+    .past-papers ul li {
+      margin-bottom: 10px;
+    }
+    .past-papers ul li a {
+      font-size: 1.1rem;
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+    /* Introduction Section */
+    .intro-section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .intro-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: var(--primary-color);
+    }
+    .intro-section p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+    }
+    /* Features Section */
+    .features {
+      padding: 40px 20px;
+      background: #fff;
+      text-align: center;
+    }
+    .feature-item {
+      margin-bottom: 20px;
+    }
+    .feature-item i {
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+    .feature-item h4 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    /* Accordion Styling */
+    .accordion .card-header {
+      background: var(--primary-color);
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .accordion .card-body {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      background: #fff;
+      padding: 20px;
+    }
+    .exam-tip {
+      background: rgba(26,188,156,0.15);
+      border-left: 4px solid var(--primary-color);
+      padding: 8px 12px;
+      margin: 10px 0;
+      font-style: italic;
+      color: #555;
+    }
+    /* Footer */
+    footer {
+      background: var(--secondary-color);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+      border-radius: 4px;
+    }
+    /* SVG styling for diagrams */
+    svg { margin-top: 10px; }
+    .diagram-label { font-size: 14px; fill: red; }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Maths - Leaving Cert 2025</h1>
+  
+  <!-- Header Banner -->
+  <header class="banner">
+    <img src="https://images.unsplash.com/photo-1632571401005-458e9d244591?q=80&w=2942&auto=format&fit=crop" alt="Math Themed Image">
+    <div class="banner-content">
+      <div>
+        <h1>Leaving Cert Maths Revision Hub</h1>
+        <p>Unlock your potential with comprehensive, exam-focused revision</p>
+      </div>
+    </div>
   </header>
   
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="biology.html">Biology</a></li>
-      <li><a href="french.html">French</a></li>
-      <li><a href="irish.html">Irish</a></li>
-      <li><a href="music.html">Music</a></li>
-      <li><a href="english.html">English</a></li>
-      <li><a href="geography.html">Geography</a></li>
-    </ul>
+  <!--  Navigation -->
+  <nav class="fixed-top">
+    <div class="container">
+      <a href="index.html">Home</a>
+      <a href="biology.html" class="d-none">Biology</a>
+      <a href="french.html" class="d-none">French</a>
+      <a href="maths.html">Maths</a>
+      <a href="irish.html" class="d-none">Irish</a>
+      <a href="music.html" class="d-none">Music</a>
+      <a href="english.html" class="d-none">English</a>
+      <a href="geography.html" class="d-none">Geography</a>
+    </div>
   </nav>
   
-  <div class="container">
-    <h2 class="subject-title">Advanced Maths Topics</h2>
+  <!-- Main Content -->
+  <main class="container">
     
-    <section class="topic">
-      <h3>Algebra</h3>
-      <p><strong>Equations & Functions:</strong> Detailed study of linear, quadratic, and polynomial equations; function notation, domain, range, and graphing techniques.</p>
+    <!-- Past Exam Papers Section -->
+    <section class="past-papers">
+      <div class="container">
+        <h2>Past Exam Papers</h2>
+        <p>
+          Access official, free past exam papers for Leaving Cert Maths. Click the links below to view and download papers from previous years.
+        </p>
+        <ul>
+          <li>
+            <a href="https://www.examinations.ie/archive/exampapers/2024/LC003ALP100EV.pdf" target="_blank">
+              Paper 1 - Higher Level 2024
+            </a>
+          </li>
+          <li>
+            <a href="https://www.examinations.ie/archive/exampapers/2024/LC003ALP200EV.pdf" target="_blank">
+              Paper 2 - Higher Level 2024
+            </a>
+          </li>
+          <li>
+            <a href="https://www.examinations.ie/archive/markingschemes/2024/LC003ALP000EV.pdf" target="_blank">
+              Marking Scheme - Higher Level 2024
+            </a>
+          </li>
+          <li>
+            <a href="https://www.examinations.ie/archive/exampapers/2022/LC003ALP100EV.pdf" target="_blank">
+              Paper 1 - Higher Level 2022
+            </a>
+          </li>
+          <li>
+            <a href="https://www.examinations.ie/archive/exampapers/2022/LC003ALP200EV.pdf" target="_blank">
+              Paper 2 - Higher Level 2022
+            </a>
+          </li>
+          <li>
+            <a href="https://www.examinations.ie/archive/markingschemes/2022/LC003ALP000EV.pdf" target="_blank">
+              Marking Scheme - Higher Level 2022
+            </a>
+          </li>
+          <li>
+            <a href="https://www.examinations.ie/archive/exampapers/2021/LC003ALP100EV.pdf" target="_blank">
+              Paper 1 - Higher Level 2021
+            </a>
+          </li>
+          <li>
+            <a href="https://www.examinations.ie/archive/exampapers/2021/LC003ALP200EV.pdf" target="_blank">
+              Paper 2 - Higher Level 2021
+            </a>
+          </li>
+          <li>
+            <a href="https://www.examinations.ie/archive/markingschemes/2021/LC003ALP000EV.pdf" target="_blank">
+              Marking Scheme - Higher Level 2021
+            </a>
+          </li>
+        </ul>
+      </div>
     </section>
     
-    <section class="topic">
-      <h3>Geometry</h3>
-      <p><strong>Euclidean Geometry:</strong> Properties of shapes, theorems and proofs, constructions, and circle theorems with worked examples.</p>
+    <!-- Introduction Section -->
+    <section class="intro-section">
+      <div class="container">
+        <h2>Welcome to Your Revision Hub</h2>
+        <p>
+          This website is built specifically for Leaving Cert students, offering concise revision notes and easily-accesible past papers across a growing number of subjects.
+        </p>
+        <p style="font-style: italic; margin-bottom: 20px;">
+          <strong>Note:</strong> Official Log Tables are available here <a href="https://www.examinations.ie/misc-doc/BI-EX-7266997.pdf" target="_blank">Formulae & Tables Book</a>.
+        </p>
+      </div>
     </section>
     
-    <section class="topic">
-      <h3>Calculus</h3>
-      <p><strong>Limits & Continuity:</strong> Explanation of limits, continuity definitions, and epsilon-delta proofs.</p>
-      <p><strong>Differentiation & Integration:</strong> Techniques for differentiation, applications to rates of change, integration methods, and area calculations with sample problems.</p>
+    <!-- Features Section -->
+    <section class="features">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 feature-item text-center">
+            <i class="fas fa-book-open"></i>
+            <h4>Comprehensive Notes</h4>
+            <p>Detailed explanations and step-by-step guides covering the higher level syllabus.</p>
+          </div>
+          <div class="col-md-4 feature-item text-center">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <h4>Interactive Quizzes</h4>
+            <p>Engage with dynamic quizzes and instant feedback to test your understanding(coming soon!).</p>
+          </div>
+          <div class="col-md-4 feature-item text-center">
+            <i class="fas fa-graduation-cap"></i>
+            <h4>Exam Strategies</h4>
+            <p>Proven techniques and tips to help you excel on exam day.</p>
+          </div>
+        </div>
+      </div>
     </section>
     
-    <section class="topic">
-      <h3>Statistics & Probability</h3>
-      <p><strong>Data Analysis:</strong> Mean, median, mode, variance, standard deviation, and data interpretation.</p>
-      <p><strong>Probability:</strong> Fundamental probability rules, combinations, permutations, and sample exam questions.</p>
-    </section>
-    
-    <section class="topic">
-      <h3>Trigonometry</h3>
-      <p><strong>Trigonometric Functions:</strong> In-depth study of sine, cosine, tangent and their inverses.</p>
-      <p><strong>Identities & Equations:</strong> Use of Pythagorean identities, angle sum and double-angle formulas, with practice problems.</p>
-    </section>
-    
-    <!-- Additional detailed sections can be added here -->
-    
+    <!-- Accordion for Maths Topics -->
+    <div id="mathsAccordion" class="accordion">
+      
+     <!-- Card for Algebra Revision -->
+<div class="card" style="margin-bottom: 20px;">
+  <div class="card-header" id="headingAlgebra">
+    <h5 class="mb-0">
+      <button class="btn btn-link text-white" style="width:100%; text-align:left;" 
+              data-toggle="collapse" data-target="#collapseAlgebra" aria-expanded="false" aria-controls="collapseAlgebra">
+        Algebra Revision Notes <i class="fas fa-chevron-down float-right"></i>
+      </button>
+    </h5>
   </div>
+  <div id="collapseAlgebra" class="collapse" aria-labelledby="headingAlgebra" data-parent="#mathsAccordion">
+    <div class="card-body" style="line-height: 1.8; font-size: 1.15rem; padding: 25px;">
+      
+      <h3 style="margin-top:0;">Algebra – Leaving Cert Higher Level Revision</h3>
+      <p>
+        Algebra is a core topic in Leaving Cert Higher Level Maths. The following notes cover key concepts including algebraic expressions, factorisation, solving equations, exponent rules, the binomial theorem, and inequalities. Each section is illustrated with clear examples and exam tips.
+      </p>
+      
+      <!-- 1. Algebraic Expressions -->
+      <h4 style="margin-top:20px;">1. Algebraic Expressions</h4>
+      <p>
+        Algebraic expressions combine numbers, variables, and arithmetic operations. The aim is often to simplify, expand, or factorise these expressions.
+      </p>
+      <ul style="margin-left:20px;">
+        <li>
+          <strong>Simplification:</strong> Combine like terms and use the distributive property.  
+          <em>Example:</em> \( 3x + 2x = 5x \).
+        </li>
+        <li>
+          <strong>Key Identities:</strong>
+          <ul style="margin-left:20px;">
+            <li><em>Difference of Squares:</em> \( a^2 - b^2 = (a - b)(a + b) \).</li>
+            <li><em>Perfect Square Trinomials:</em> \( (a \pm b)^2 = a^2 \pm 2ab + b^2 \).</li>
+          </ul>
+        </li>
+      </ul>
+      <p class="exam-tip">Exam Tip: Write all steps clearly to secure partial marks even if the final answer is slightly off.</p>
+      
+      <!-- 2. Factorisation Techniques -->
+      <h4 style="margin-top:20px;">2. Factorisation Techniques</h4>
+      <p>
+        Factorisation involves rewriting an expression as a product of factors. Common techniques include:
+      </p>
+      <ul style="margin-left:20px;">
+        <li>
+          <strong>Common Factor Extraction:</strong> Factor out the greatest common factor.  
+          <em>Example:</em> \( 6x^2 + 9x = 3x(2x+3) \).
+        </li>
+        <li>
+          <strong>Factorisation by Grouping:</strong> Group terms with common factors when a single common factor is not obvious.
+        </li>
+        <li>
+          <strong>Quadratic Factorisation:</strong> Factorise quadratic expressions \( ax^2 + bx + c \) by finding two numbers that multiply to \( ac \) and add to \( b \), or use the AC method.
+        </li>
+      </ul>
+      <p class="exam-tip">Exam Tip: If factorisation is difficult, use the quadratic formula to verify your answer.</p>
+      
+      <!-- 3. Solving Equations -->
+      <h4 style="margin-top:20px;">3. Solving Equations</h4>
+      <p>
+        Solving equations involves finding the value(s) of the variable that satisfy the equation.
+      </p>
+      <ul style="margin-left:20px;">
+        <li>
+          <strong>Linear Equations:</strong> Isolate the variable using inverse operations.  
+          <em>Example:</em> \( 2x+5=11 \) ⟹ \( x=3 \).
+        </li>
+        <li>
+          <strong>Quadratic Equations:</strong> Write in standard form \( ax^2+bx+c=0 \) and solve by factorisation or using the quadratic formula:  
+          \[
+          x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}
+          \]
+        </li>
+        <li>
+          <strong>Simultaneous Equations:</strong> Solve systems using substitution or elimination.
+        </li>
+      </ul>
+      <p class="exam-tip">Exam Tip: Always check your solutions by substituting them back into the original equations.</p>
+      
+      <!-- 4. Exponents and Logarithms (Briefly) -->
+      <h4 style="margin-top:20px;">4. Exponents and Logarithms</h4>
+      <p>
+        Fundamental rules for exponents are essential:
+      </p>
+      <ul style="margin-left:20px;">
+        <li><strong>Product Rule:</strong> \( a^m \cdot a^n = a^{m+n} \).</li>
+        <li><strong>Quotient Rule:</strong> \( \frac{a^m}{a^n} = a^{m-n} \) (with \( a \neq 0 \)).</li>
+        <li><strong>Power Rule:</strong> \( (a^m)^n = a^{mn} \).</li>
+      </ul>
+      <p>
+        Logarithms, the inverses of exponentials, follow the identity: \( \log_a (a^x) = x \).
+      </p>
+      <p class="exam-tip">Exam Tip: Be consistent with bases when applying exponent rules.</p>
+      
+      <!-- 5. The Binomial Theorem -->
+      <h4 style="margin-top:20px;">5. The Binomial Theorem</h4>
+      <p>
+        The Binomial Theorem is used for expanding expressions of the form \( (a+b)^n \):
+      </p>
+      <p style="text-align:center;">\( (a+b)^n = \sum_{k=0}^{n} \binom{n}{k} a^{n-k}b^k \)</p>
+      <p>
+        <em>Example:</em> Expand \( (x+2)^3 \):  
+        \( x^3 + 3x^2(2) + 3x(2)^2 + 2^3 = x^3 + 6x^2 + 12x + 8 \).
+      </p>
+      <p class="exam-tip">Exam Tip: Memorise the first few rows of Pascal’s Triangle to speed up expansions.</p>
+      
+      <!-- 6. Inequalities -->
+      <h4 style="margin-top:20px;">6. Inequalities</h4>
+      <p>
+        Inequalities are solved similarly to equations, but with special attention when multiplying or dividing by a negative number (which reverses the inequality sign).
+      </p>
+      <p>
+        <em>Example:</em> Solve \( 3x - 5 < 10 \).<br>
+        \( 3x < 15 \) ⟹ \( x < 5 \).
+      </p>
+      <p class="exam-tip">Exam Tip: Always check the direction of the inequality when negative coefficients are involved.</p>
+      
+      <!-- 7. Exam Tips -->
+      <h4 style="margin-top:20px;">7. Exam Tips</h4>
+      <ul style="margin-left:20px;">
+        <li>Clearly write all steps and show your working to gain partial marks.</li>
+        <li>Memorise key identities and factorisation methods.</li>
+        <li>Use proper algebraic notation throughout your answers.</li>
+        <li>Practice past State Examination questions to become familiar with typical question formats.</li>
+        <li>Double-check your calculations and verify solutions by substitution where possible.</li>
+      </ul>
+      
+      <!-- 8. Summary -->
+      <h4 style="margin-top:20px;">8. Summary</h4>
+      <p>
+        Algebra in Leaving Cert Higher Level Maths covers a wide range of skills from simplifying expressions to solving complex equations. A clear understanding of algebraic manipulation, factorisation techniques, and equation solving is essential for exam success. Regular practice and clear, logical working will build your proficiency.
+      </p>
+      
+    </div>
+  </div>
+</div>
+      
+      <!-- Card 2: Area and Volume -->
+      <div class="card" style="margin-bottom: 20px;">
+        <div class="card-header" id="headingAreaVolume">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" style="width:100%; text-align:left;" data-toggle="collapse" data-target="#collapseAreaVolume" aria-expanded="false" aria-controls="collapseAreaVolume">
+              Area and Volume <i class="fas fa-chevron-down float-right"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapseAreaVolume" class="collapse" aria-labelledby="headingAreaVolume" data-parent="#mathsAccordion">
+          <div class="card-body" style="line-height: 1.8; font-size: 1.1rem; padding: 20px;">
+            
+            <h3>Area</h3>
+            
+            <!-- Rectangle -->
+            <h4>Rectangle</h4>
+            <p>Formula: \( A = l \times w \)<br>
+              Example: For \( l = 8\,\text{cm} \) and \( w = 5\,\text{cm} \), \( A = 40\,\text{cm}^2 \).
+            </p>
+            <svg width="220" height="150" xmlns="http://www.w3.org/2000/svg">
+              <rect x="30" y="30" width="160" height="80" fill="none" stroke="black" stroke-width="2"/>
+              <line x1="30" y1="115" x2="190" y2="115" stroke="red" stroke-width="1" marker-end="url(#arrowR)"/>
+              <text x="110" y="135" text-anchor="middle" font-size="14" fill="red">l</text>
+              <line x1="20" y1="30" x2="20" y2="110" stroke="red" stroke-width="1" marker-end="url(#arrowRVert)"/>
+              <text x="10" y="70" text-anchor="middle" font-size="14" fill="red" transform="rotate(-90,10,70)">w</text>
+              <defs>
+                <marker id="arrowR" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
+                  <path d="M0,0 L0,6 L9,3 z" fill="red"/>
+                </marker>
+                <marker id="arrowRVert" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
+                  <path d="M0,0 L0,6 L9,3 z" fill="red"/>
+                </marker>
+              </defs>
+            </svg>
+            
+            <!-- Triangle -->
+            <h4>Triangle</h4>
+            <p>Formula: \( A = \frac{1}{2} \times b \times h \)<br>
+              Example: For base \( b = 6\,\text{cm} \) and height \( h = 4\,\text{cm} \), \( A = 12\,\text{cm}^2 \).
+            </p>
+            <svg width="220" height="150" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="30,130 190,130 110,30" fill="none" stroke="black" stroke-width="2"/>
+              <line x1="110" y1="30" x2="110" y2="130" stroke="red" stroke-dasharray="4,4" stroke-width="1"/>
+              <text x="115" y="80" font-size="14" fill="red">h</text>
+              <line x1="30" y1="135" x2="190" y2="135" stroke="red" stroke-width="1" marker-end="url(#arrowT)"/>
+              <text x="110" y="150" text-anchor="middle" font-size="14" fill="red">b</text>
+              <defs>
+                <marker id="arrowT" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
+                  <path d="M0,0 L0,6 L9,3 z" fill="red"/>
+                </marker>
+              </defs>
+            </svg>
+            
+            <!-- Circle -->
+            <h4>Circle</h4>
+            <p>Formula: \( A = \pi r^2 \)<br>
+              Example: For \( r = 3\,\text{cm} \), \( A \approx 28.26\,\text{cm}^2 \).
+            </p>
+            <svg width="220" height="220" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="110" cy="110" r="70" fill="none" stroke="black" stroke-width="2"/>
+              <line x1="110" y1="110" x2="180" y2="110" stroke="red" stroke-width="1" marker-end="url(#arrowC)"/>
+              <text x="145" y="105" text-anchor="middle" font-size="14" fill="red">r</text>
+              <defs>
+                <marker id="arrowC" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
+                  <path d="M0,0 L0,6 L9,3 z" fill="red"/>
+                </marker>
+              </defs>
+            </svg>
+            
+            <!-- Parallelogram -->
+            <h4>Parallelogram</h4>
+            <p>Formula: \( A = b \times h \)<br>
+              Example: For base \( b = 7\,\text{cm} \) and vertical height \( h = 5\,\text{cm} \), \( A = 35\,\text{cm}^2 \).
+            </p>
+            <svg width="220" height="150" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="40,30 180,30 150,90 10,90" fill="none" stroke="black" stroke-width="2"/>
+              <line x1="40" y1="30" x2="40" y2="90" stroke="red" stroke-dasharray="4,4" stroke-width="1"/>
+              <text x="30" y="60" transform="rotate(-90,30,60)" font-size="14" fill="red">h</text>
+              <line x1="40" y1="25" x2="180" y2="25" stroke="red" stroke-width="1" marker-end="url(#arrowP)"/>
+              <text x="110" y="15" text-anchor="middle" font-size="14" fill="red">b</text>
+              <defs>
+                <marker id="arrowP" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
+                  <path d="M0,0 L0,6 L9,3 z" fill="red"/>
+                </marker>
+              </defs>
+            </svg>
+            
+            <!-- Trapezium -->
+            <h4>Trapezium</h4>
+            <p>Formula: \( A = \frac{1}{2}(a+b)h \)<br>
+              Example: For \( a = 4\,\text{cm} \), \( b = 6\,\text{cm} \), and \( h = 5\,\text{cm} \), \( A = 25\,\text{cm}^2 \).
+            </p>
+            <svg width="220" height="150" xmlns="http://www.w3.org/2000/svg">
+              <!-- Draw a trapezium with horizontal top and bottom -->
+              <polygon points="50,40 170,40 190,100 30,100" fill="none" stroke="black" stroke-width="2"/>
+              <line x1="50" y1="40" x2="50" y2="100" stroke="red" stroke-dasharray="4,4" stroke-width="1"/>
+              <text x="40" y="70" transform="rotate(-90,40,70)" font-size="14" fill="red">h</text>
+              <line x1="50" y1="35" x2="170" y2="35" stroke="red" stroke-width="1" marker-end="url(#arrowT)"/>
+              <text x="110" y="20" text-anchor="middle" font-size="14" fill="red">\( \frac{a+b}{2} \)</text>
+              <defs>
+                <marker id="arrowT" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
+                  <path d="M0,0 L0,6 L9,3 z" fill="red"/>
+                </marker>
+              </defs>
+            </svg>
+            
+            <h3 style="margin-top:30px;">Volume</h3>
+            
+            <!-- Prism & Cylinder -->
+            <h4>Prisms &amp; Cylinders</h4>
+            <p><strong>Right Prism:</strong> \( V = (\text{Area of Base}) \times h \)<br>
+               Example: For a rectangular base of \(20\,\text{cm}^2\) and \( h = 10\,\text{cm}\), \( V = 200\,\text{cm}^3 \).
+            </p>
+            <p><strong>Cylinder:</strong> \( V = \pi r^2 h \)<br>
+               Example: For \( r = 3\,\text{cm} \) and \( h = 10\,\text{cm}\), \( V \approx 282.6\,\text{cm}^3 \).
+            </p>
+            <svg width="220" height="150" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="110" cy="40" rx="70" ry="20" fill="none" stroke="black" stroke-width="2"/>
+              <rect x="40" y="40" width="140" height="70" fill="none" stroke="black" stroke-width="2"/>
+              <ellipse cx="110" cy="110" rx="70" ry="20" fill="none" stroke="black" stroke-width="2"/>
+              <line x1="40" y1="40" x2="40" y2="110" stroke="red" stroke-dasharray="4,4" stroke-width="1"/>
+              <text x="30" y="75" transform="rotate(-90,30,75)" font-size="14" fill="red">h</text>
+            </svg>
+            
+            <!-- Pyramid & Cone -->
+            <h4>Pyramids &amp; Cones</h4>
+            <p><strong>Pyramid:</strong> \( V = \frac{1}{3} \times (\text{Area of Base}) \times h \)<br>
+               Example: For a base area of \(30\,\text{cm}^2\) and \( h = 9\,\text{cm}\), \( V = 90\,\text{cm}^3 \).
+            </p>
+            <svg width="220" height="150" xmlns="http://www.w3.org/2000/svg">
+              <!-- Simple pyramid with rectangular base -->
+              <polygon points="60,110 160,110 140,130 80,130" fill="none" stroke="black" stroke-width="2"/>
+              <circle cx="110" cy="30" r="3" fill="black"/>
+              <line x1="60" y1="110" x2="110" y2="30" stroke="black" stroke-width="2"/>
+              <line x1="160" y1="110" x2="110" y2="30" stroke="black" stroke-width="2"/>
+              <line x1="110" y1="30" x2="110" y2="110" stroke="red" stroke-dasharray="4,4" stroke-width="1"/>
+              <text x="115" y="75" font-size="14" fill="red">h</text>
+            </svg>
+            <p><strong>Cone:</strong> \( V = \frac{1}{3}\pi r^2 h \)<br>
+               Example: For \( r = 3\,\text{cm} \) and \( h = 10\,\text{cm}\), \( V \approx 94.2\,\text{cm}^3 \).
+            </p>
+            <svg width="220" height="150" xmlns="http://www.w3.org/2000/svg">
+              <!-- Cone base ellipse -->
+              <ellipse cx="110" cy="120" rx="70" ry="20" fill="none" stroke="black" stroke-width="2"/>
+              <circle cx="110" cy="30" r="3" fill="black"/>
+              <line x1="40" y1="120" x2="110" y2="30" stroke="black" stroke-width="2"/>
+              <line x1="180" y1="120" x2="110" y2="30" stroke="black" stroke-width="2"/>
+              <line x1="110" y1="30" x2="110" y2="120" stroke="red" stroke-dasharray="4,4" stroke-width="1"/>
+              <text x="115" y="75" font-size="14" fill="red">h</text>
+            </svg>
+            
+            <!-- Sphere -->
+            <h4>Sphere</h4>
+            <p><strong>Sphere:</strong> \( V = \frac{4}{3}\pi r^3 \)<br>
+               Example: For \( r = 4\,\text{cm} \), \( V \approx 268.1\,\text{cm}^3 \).
+            </p>
+            <svg width="220" height="220" xmlns="http://www.w3.org/2000/svg">
+              <!-- Outer circle -->
+              <circle cx="110" cy="110" r="70" fill="none" stroke="black" stroke-width="2"/>
+              <!-- Inner ellipse to suggest 3D shape -->
+              <ellipse cx="110" cy="110" rx="70" ry="30" fill="none" stroke="black" stroke-width="2"/>
+              <line x1="110" y1="110" x2="180" y2="110" stroke="red" stroke-width="1" marker-end="url(#arrowSphere)"/>
+              <text x="145" y="105" text-anchor="middle" font-size="14" fill="red">r</text>
+              <defs>
+                <marker id="arrowSphere" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
+                  <path d="M0,0 L0,6 L9,3 z" fill="red"/>
+                </marker>
+              </defs>
+            </svg>
+            
+            <h4 style="margin-top:20px;">General Tips for Area &amp; Volume</h4>
+            <ul style="margin-left:20px;">
+              <li><strong>Consistency of Units:</strong> Convert all measurements to the same unit before calculating.</li>
+              <li><strong>Clear Diagrams:</strong> Draw accurate, to-scale diagrams with all dimensions labeled.</li>
+              <li><strong>Show All Work:</strong> Document every step to secure partial marks.</li>
+              <li><strong>Practice:</strong> Solve a variety of past exam problems to build speed and accuracy.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Card 3: Complex Numbers -->
+      <div class="card" style="margin-bottom: 20px;">
+        <div class="card-header" id="headingComplexNumbers">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" style="width:100%; text-align:left;" data-toggle="collapse" data-target="#collapseComplexNumbers" aria-expanded="false" aria-controls="collapseComplexNumbers">
+              Complex Numbers <i class="fas fa-chevron-down float-right"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapseComplexNumbers" class="collapse" aria-labelledby="headingComplexNumbers" data-parent="#mathsAccordion">
+          <div class="card-body" style="line-height: 1.8; font-size: 1.15rem; padding: 25px;">
+            <h3 style="margin-top:0;">Complex Numbers Revision Notes</h3>
+            <h4 style="margin-top:20px;">Definition and Forms</h4>
+            <p>
+              A <strong>complex number</strong> is expressed as \( z = a + bi \), where:
+            </p>
+            <ul style="margin-left:20px; margin-bottom:20px;">
+              <li>\( a \) is the <em>real part</em> (Re\( (z) \)).</li>
+              <li>\( b \) is the <em>imaginary part</em> (Im\( (z) \)), and \( i \) is the imaginary unit with \( i^2 = -1 \).</li>
+            </ul>
+            <p>
+              Complex numbers are represented on the <strong>complex plane</strong>, with the horizontal axis as the real part and the vertical axis as the imaginary part.
+            </p>
+            <h4 style="margin-top:20px;">Rectangular (Cartesian) Form</h4>
+            <p>
+              The standard form is \( z = a + bi \). For example, \( 3+4i \) has a real part of 3 and an imaginary part of 4.
+            </p>
+            <h4 style="margin-top:20px;">Polar Form and Euler’s Formula</h4>
+            <p>
+              In polar form, a complex number is represented as:
+              \[
+              z = r (\cos \theta + i \sin \theta)
+              \]
+              where:
+            </p>
+            <ul style="margin-left:20px; margin-bottom:20px;">
+              <li>\( r = |z| = \sqrt{a^2+b^2} \) is the <em>modulus</em>.</li>
+              <li>\( \theta = \arg(z) \) is the <em>argument</em> (angle), with \( \theta = \tan^{-1}\left(\frac{b}{a}\right) \) (adjusted by quadrant).</li>
+            </ul>
+            <p>
+              Using Euler’s formula, this can be written as:
+              \[
+              z = re^{i\theta}
+              \]
+            </p>
+            <h4 style="margin-top:20px;">Operations on Complex Numbers</h4>
+            <p>
+              <strong>Addition/Subtraction:</strong> Add or subtract corresponding parts.<br>
+              Example: \( (3+4i) + (1-2i) = 4+2i \).
+            </p>
+            <p>
+              <strong>Multiplication:</strong> Use the distributive property:
+              \[
+              (a+bi)(c+di) = (ac-bd) + (ad+bc)i
+              \]
+              Example: \( (3+4i)(1-2i) = 11-2i \).
+            </p>
+            <p>
+              <strong>Division:</strong> Multiply by the conjugate to simplify:
+              \[
+              \frac{3+4i}{1-2i} = \frac{(3+4i)(1+2i)}{(1-2i)(1+2i)} = -1+2i.
+              \]
+            </p>
+            <h4 style="margin-top:20px;">Complex Conjugate</h4>
+            <p>
+              For \( z = a+bi \), the conjugate is \( \bar{z} = a-bi \). Note that:
+              \[
+              |z|^2 = z\bar{z} = a^2+b^2.
+              \]
+            </p>
+            <h4 style="margin-top:20px;">De Moivre's Theorem</h4>
+            <p>
+              If \( z = re^{i\theta} \), then:
+              \[
+              z^n = r^n e^{in\theta} = r^n (\cos(n\theta) + i\sin(n\theta)).
+              \]
+              This is useful for computing powers and roots.
+            </p>
+            <h4 style="margin-top:20px;">Examples and Applications</h4>
+            <p>
+              <strong>Example 1:</strong> Express \( 1+i \) in polar form.<br>
+              <em>Solution:</em> \( r=\sqrt{2} \); \( \theta=45^\circ \) (or \( \pi/4 \) radians). Hence, \( 1+i=\sqrt{2}(\cos\frac{\pi}{4}+i\sin\frac{\pi}{4}) \).
+            </p>
+            <p>
+              <strong>Example 2:</strong> Compute \( (1+i)^4 \) using De Moivre's Theorem.<br>
+              Convert \( 1+i \) to polar form, then:
+              \[
+              (1+i)^4 = (\sqrt{2})^4 (\cos\pi+i\sin\pi)=4(-1)= -4.
+              \]
+            </p>
+            <h4 style="margin-top:20px;">Exam Tips</h4>
+            <ul style="margin-left:20px;">
+              <li>Express complex numbers as \( a+bi \) unless polar form is more useful.</li>
+              <li>Remember \( i^2 = -1 \).</li>
+              <li>For division, multiply numerator and denominator by the conjugate.</li>
+              <li>Use De Moivre’s Theorem for powers and roots.</li>
+              <li>Sketch the complex plane to visualize modulus and argument.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Card for Differentiation -->
+      <div class="card" style="margin-bottom: 20px;">
+        <div class="card-header" id="headingDifferentiation">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" style="width:100%; text-align:left;" 
+                    data-toggle="collapse" data-target="#collapseDifferentiation" 
+                    aria-expanded="false" aria-controls="collapseDifferentiation">
+              Differentiation <i class="fas fa-chevron-down float-right"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapseDifferentiation" class="collapse" aria-labelledby="headingDifferentiation" data-parent="#mathsAccordion">
+          <div class="card-body" style="line-height: 1.8; font-size: 1.15rem; padding: 25px;">
+            
+            <h3 style="margin-top:0;">Differentiation – Leaving Cert Higher Level Revision</h3>
+            
+            <!-- 1. Definition and Notation -->
+            <h4 style="margin-top:20px;">1. Definition and Notation</h4>
+            <p>
+              In the Leaving Certificate syllabus, <strong>differentiation</strong> is the process of finding the <em>derived function</em> (or gradient function) of a given function. The derivative provides the instantaneous rate of change of a function and gives the gradient of the tangent to the curve at any point.
+            </p>
+            <p style="text-align:center;">\( \frac{dy}{dx} = \lim_{h\to 0} \frac{f(x+h) - f(x)}{h} \)</p>
+            <p>
+              Here, \( \frac{dy}{dx} \) is the derivative of \( y=f(x) \) and is sometimes written as \( f'(x) \) when convenient.
+            </p>
+            
+            <!-- 2. Basic Differentiation Rules -->
+            <h4 style="margin-top:20px;">2. Basic Differentiation Rules</h4>
+            <ul style="margin-left:20px; margin-bottom:20px;">
+              <li><strong>Constant Rule:</strong> \( \frac{d}{dx}(c)=0 \), where \( c \) is a constant.</li>
+              <li><strong>Power Rule:</strong> \( \frac{d}{dx}(x^n)= n\,x^{n-1} \). (Applies for any real \( n \))</li>
+              <li><strong>Constant Multiple Rule:</strong> \( \frac{d}{dx}[cf(x)] = c\,f'(x) \).</li>
+              <li><strong>Sum and Difference Rule:</strong> \( \frac{d}{dx}[f(x) \pm g(x)] = f'(x) \pm g'(x) \).</li>
+            </ul>
+            
+            <!-- 3. Advanced Rules: Product, Quotient, and Chain -->
+            <h4 style="margin-top:20px;">3. Differentiation Rules</h4>
+            <h5 style="margin-top:10px;">a. Product Rule</h5>
+            <p style="margin-left:20px;">
+              For differentiable functions \( f(x) \) and \( g(x) \):
+            </p>
+            <p style="text-align:center;">\( \frac{d}{dx}[f(x)g(x)] = f'(x)g(x) + f(x)g'(x) \)</p>
+            
+            <h5 style="margin-top:10px;">b. Quotient Rule</h5>
+            <p style="margin-left:20px;">
+              For \( g(x) \neq 0 \):
+            </p>
+            <p style="text-align:center;">\( \frac{d}{dx}\left[\frac{f(x)}{g(x)}\right] = \frac{f'(x)g(x)-f(x)g'(x)}{[g(x)]^2} \)</p>
+            
+            <h5 style="margin-top:10px;">c. Chain Rule</h5>
+            <p style="margin-left:20px;">
+              For a composite function \( y=f(g(x)) \), let \( u=g(x) \); then:
+            </p>
+            <p style="text-align:center;">\( \frac{dy}{dx} = f'(u) \cdot g'(x) \)</p>
+            <p style="margin-left:20px;">
+              <strong>Example:</strong> Differentiate \( y=(2x+3)^4 \).<br>
+              Let \( u=2x+3 \) so that \( y=u^4 \). Then \( \frac{du}{dx}=2 \) and \( \frac{dy}{du}=4u^3 \), yielding \( \frac{dy}{dx}=4(2x+3)^3 \cdot 2 = 8(2x+3)^3 \).
+            </p>
+            
+            <!-- 4. Differentiation from First Principles -->
+            <h4 style="margin-top:20px;">4. Differentiation from First Principles</h4>
+            <p style="margin-left:20px;">
+              Occasionally, you may be asked to differentiate using the limit definition. For example, for \( f(x)=x^2 \):
+            </p>
+            <p style="text-align:center;">\( f'(x) = \lim_{h\to 0} \frac{(x+h)^2 - x^2}{h} = \lim_{h\to 0}(2x+h)=2x \)</p>
+            
+            <!-- 5. Implicit Differentiation -->
+            <h4 style="margin-top:20px;">5. Implicit Differentiation</h4>
+            <p style="margin-left:20px;">
+              When a function is given implicitly (for example, \( x^2 + y^2 = 25 \)), differentiate both sides with respect to \( x \) while treating \( y \) as a function of \( x \). For instance:
+            </p>
+            <p style="text-align:center;">\( 2x+2y\frac{dy}{dx}=0 \quad \Longrightarrow \quad \frac{dy}{dx} = -\frac{x}{y} \)</p>
+            
+            <!-- 6. Higher Order Derivatives -->
+            <h4 style="margin-top:20px;">6. Higher Order Derivatives and Concavity</h4>
+            <p style="margin-left:20px;">
+              The second derivative, \( f''(x) \), indicates the rate of change of the gradient and is used to determine the concavity of a function:
+            </p>
+            <ul style="margin-left:20px;">
+              <li>If \( f''(x) > 0 \): the curve is <strong>concave up</strong> (cup-shaped).</li>
+              <li>If \( f''(x) < 0 \): the curve is <strong>concave down</strong> (cap-shaped).</li>
+            </ul>
+            
+            <!-- 7. Applications: Tangents, Extrema and Curve Sketching -->
+            <h4 style="margin-top:20px;">7. Applications of Differentiation</h4>
+            <h5 style="margin-top:10px;">a. Tangents and Normals</h5>
+            <p style="margin-left:20px;">
+              The derivative at a point gives the slope of the tangent line. The tangent at \( (x_0, f(x_0)) \) is given by:
+            </p>
+            <p style="text-align:center;">\( y - f(x_0) = f'(x_0)(x - x_0) \)</p>
+            <p style="margin-left:20px;">
+              The normal line (perpendicular to the tangent) has a slope of \( -\frac{1}{f'(x_0)} \).
+            </p>
+            <h5 style="margin-top:10px;">b. Extrema and Inflection Points</h5>
+            <p style="margin-left:20px;">
+              Stationary points occur when \( f'(x)=0 \). Use the second derivative test:
+            </p>
+            <ul style="margin-left:20px;">
+              <li>If \( f''(x) > 0 \), the point is a local minimum.</li>
+              <li>If \( f''(x) < 0 \), the point is a local maximum.</li>
+            </ul>
+            <h5 style="margin-top:10px;">c. Curve Sketching</h5>
+            <p style="margin-left:20px;">
+              Combine the information from the first and second derivatives to sketch the graph:
+            </p>
+            <ul style="margin-left:20px;">
+              <li>Identify intercepts and stationary points.</li>
+              <li>Determine intervals of increase/decrease from \( f'(x) \).</li>
+              <li>Use \( f''(x) \) to mark concavity and points of inflection.</li>
+            </ul>
+            
+            <!-- 8. Detailed Example Problems -->
+            <h4 style="margin-top:20px;">8. Example Problems</h4>
+            <p style="margin-left:20px;">
+              <strong>Example 1:</strong> Differentiate \( f(x) = (3x^2 + 5x - 4)^3 \) using the chain rule.<br>
+              <em>Solution:</em> Let \( u=3x^2+5x-4 \). Then, \( \frac{du}{dx}=6x+5 \) and \( \frac{d}{du}(u^3)=3u^2 \). Hence, \( f'(x)=3(3x^2+5x-4)^2 \times (6x+5) \).
+            </p>
+            <p style="margin-left:20px;">
+              <strong>Example 2:</strong> Find \( \frac{dy}{dx} \) for the implicit equation \( x^2y + y^3 = 7 \).<br>
+              <em>Solution:</em> Differentiating gives \( 2xy + x^2\frac{dy}{dx} + 3y^2\frac{dy}{dx}=0 \). Thus, 
+              \[
+              \frac{dy}{dx} = -\frac{2xy}{x^2+3y^2}.
+              \]
+            </p>
+            <p style="margin-left:20px;">
+              <strong>Example 3:</strong> Find the equation of the tangent to \( y = \ln x \) at \( x = e \).<br>
+              <em>Solution:</em> Since \( \frac{d}{dx}\ln x = \frac{1}{x} \), at \( x=e \) the slope is \( \frac{1}{e} \) and \( y=\ln e=1 \). Therefore, the tangent is: 
+              \[
+              y-1 = \frac{1}{e}(x-e).
+              \]
+            </p>
+            
+            <!-- 9. Exam Tips -->
+            <h4 style="margin-top:20px;">9. Exam Tips </h4>
+            <ul style="margin-left:20px;">
+              <li>Never use first derivative for a first principles question
+              <li>Show all your working clearly to secure partial marks.</li>
+              <li>Pay close attention to the required rule (e.g. two terms together => Product Rule) and always pay attention to signs</li>
+              <li>Practice a variety of past State Examination questions to familiarise yourself with exam wording.</li>
+              <li>Double-check calculations using both first principles (when required) and the standard rules.</li>
+            </ul>
+            
+            <!-- 10. Summary -->
+            <h4 style="margin-top:20px;">10. Summary</h4>
+            <p style="margin-left:20px;">
+              Differentiation is a major chapter in Leaving Cert Higher Maths. Mastery requires understanding the limit definition, fluency in applying the power, product, quotient, and chain rules, and the ability to handle implicit and higher‑order derivatives. Regular practice and clear, step-by-step working are essential for exam success.
+            </p>
+            
+          </div>
+        </div>
+      </div>
+      
+<!-- Card for Financial Maths/Arithmetic -->
+<div class="card" style="margin-bottom: 20px;">
+  <div class="card-header" id="headingFinancialMaths">
+    <h5 class="mb-0">
+      <button class="btn btn-link text-white" style="width:100%; text-align:left;" 
+              data-toggle="collapse" data-target="#collapseFinancialMaths" 
+              aria-expanded="false" aria-controls="collapseFinancialMaths">
+        Financial Maths/Arithmetic <i class="fas fa-chevron-down float-right"></i>
+      </button>
+    </h5>
+  </div>
+  <div id="collapseFinancialMaths" class="collapse" aria-labelledby="headingFinancialMaths" data-parent="#mathsAccordion">
+    <div class="card-body" style="line-height: 1.8; font-size: 1.15rem; padding: 25px;">
+      
+      <h3 style="margin-top:0;">Financial Maths/Arithmetic Revision</h3>
+      
+      <!-- 1. Simple Interest -->
+      <h4 style="margin-top:20px;">1. Simple Interest</h4>
+      <p>
+        Simple interest is calculated only on the original principal. The formula is:
+      </p>
+      <p style="text-align:center;">\( I = P \times r \times t \)</p>
+      <p>
+        Where:
+      </p>
+      <ul style="margin-left:20px;">
+        <li>\( P \) is the principal amount.</li>
+        <li>\( r \) is the annual interest rate (expressed as a decimal, so 5% = 0.05).</li>
+        <li>\( t \) is the time in years.</li>
+      </ul>
+      <p>
+        The total amount after time \( t \) is then:
+      </p>
+      <p style="text-align:center;">\( A = P + I = P(1 + rt) \)</p>
+      <p>
+        <strong>Example:</strong> If €1,000 is invested at 6% per annum for 3 years:
+      </p>
+      <p style="text-align:center;">\( A = 1000 \times (1 + 0.06 \times 3) = 1000 \times 1.18 = €1180 \)</p>
+      <p class="exam-tip">Tip: Always check that the rate is in decimal form and that time is in years.</p>
+      
+      <!-- 2. Compound Interest -->
+      <h4 style="margin-top:20px;">2. Compound Interest</h4>
+      <p>
+        Compound interest is calculated on both the principal and the accumulated interest. The standard formula is:
+      </p>
+      <p style="text-align:center;">\( A = P\left(1 + \frac{r}{n}\right)^{n \cdot t} \)</p>
+      <p>
+        Where:
+      </p>
+      <ul style="margin-left:20px;">
+        <li>\( P \) is the principal.</li>
+        <li>\( r \) is the annual interest rate (decimal).</li>
+        <li>\( n \) is the number of compounding periods per year.</li>
+        <li>\( t \) is the time in years.</li>
+      </ul>
+      <p>
+        <strong>Example:</strong> For €1,000 at 5% compounded quarterly (\( n=4 \)) over 2 years:
+      </p>
+      <p style="text-align:center;">\( A = 1000\left(1 + \frac{0.05}{4}\right)^{4 \times 2} \approx 1000(1.0125)^8 \approx €1104.94 \)</p>
+      <p class="exam-tip">Tip: Ensure you use the correct compounding frequency to avoid errors.</p>
+      
+      <!-- 3. Annuities -->
+      <h4 style="margin-top:20px;">3. Annuities</h4>
+      <p>
+        An annuity is a series of equal payments made at regular intervals. The future value of an annuity is calculated by:
+      </p>
+      <p style="text-align:center;">\( A = P \frac{(1 + r)^n - 1}{r} \)</p>
+      <p>
+        Where:
+      </p>
+      <ul style="margin-left:20px;">
+        <li>\( P \) is the payment per period.</li>
+        <li>\( r \) is the interest rate per period.</li>
+        <li>\( n \) is the total number of payments.</li>
+      </ul>
+      <p>
+        <strong>Example:</strong> For 10 annual payments of €500 at 6%:
+      </p>
+      <p style="text-align:center;">\( A = 500 \frac{(1.06)^{10} - 1}{0.06} \)</p>
+      <p>
+        Evaluate the expression to find the total future value.
+      </p>
+      <p class="exam-tip">Tip: Annuity questions often require careful attention to the number of periods and the conversion of interest rates.</p>
+      
+      <!-- 4. Loans and Amortisation -->
+      <h4 style="margin-top:20px;">4. Loans and Amortisation</h4>
+      <p>
+        For loans, the monthly repayment can be calculated using the amortisation formula:
+      </p>
+      <p style="text-align:center;">\( R = P \frac{r(1 + r)^n}{(1 + r)^n - 1} \)</p>
+      <p>
+        Where:
+      </p>
+      <ul style="margin-left:20px;">
+        <li>\( P \) is the principal of the loan.</li>
+        <li>\( r \) is the monthly interest rate (annual rate divided by 12, in decimal form).</li>
+        <li>\( n \) is the total number of monthly repayments.</li>
+      </ul>
+      <p>
+        <strong>Example:</strong> For a €10,000 loan at an annual rate of 12% (i.e. monthly rate \( r=0.01 \)) over 5 years (\( n=60 \)):
+      </p>
+      <p style="text-align:center;">\( R = 10000 \frac{0.01(1.01)^{60}}{(1.01)^{60} - 1} \)</p>
+      <p>
+        Use a calculator to determine \( R \), the monthly repayment.
+      </p>
+      <p class="exam-tip">Tip: Carefully check your conversion of annual rates to monthly rates and the value of \( n \).</p>
+      
+      <!-- 5. Percentage Changes -->
+      <h4 style="margin-top:20px;">5. Percentage Changes</h4>
+      <p>
+        Percentage change is used to measure the increase or decrease in value. The formula is:
+      </p>
+      <p style="text-align:center;">\( \text{Percentage Change} = \frac{\text{New Value} - \text{Original Value}}{\text{Original Value}} \times 100\% \)</p>
+      <p>
+        <strong>Example:</strong> If the price of an item rises from €50 to €60, then:
+      </p>
+      <p style="text-align:center;">\( \frac{60-50}{50} \times 100\% = 20\% \) increase.</p>
+      <p class="exam-tip">Tip: Always check the direction of change (increase or decrease) when applying this formula.</p>
+      
+      <!-- 6. Exam Tips -->
+      <h4 style="margin-top:20px;">6. Exam Tips</h4>
+      <ul style="margin-left:20px;">
+        <li>Convert percentage rates to decimals before performing calculations.</li>
+        <li>Show all steps in your working to earn partial credit even if the final answer is incorrect.</li>
+        <li>Practice past State Examination questions specifically on financial maths to become familiar with exam-style wording.</li>
+        <li>Double-check your calculations using a calculator to avoid simple mistakes.</li>
+      </ul>
+      
+      <!-- 7. Summary -->
+      <h4 style="margin-top:20px;">7. Summary</h4>
+      <p>
+        Financial Maths/Arithmetic is a critical chapter that involves calculating interest, determining the future value of annuities, and computing loan repayments. Mastery of these topics is essential for success in Leaving Cert Higher Level Maths. Regular practice, detailed working, and a clear understanding of each formula will help you tackle exam questions confidently.
+      </p>
+      
+    </div>
+  </div>
+</div>
+      
+      <!-- Card for Functions -->
+<div class="card" style="margin-bottom: 20px;">
+  <div class="card-header" id="headingFunctions">
+    <h5 class="mb-0">
+      <button class="btn btn-link text-white" style="width:100%; text-align:left;" 
+              data-toggle="collapse" data-target="#collapseFunctions" aria-expanded="false" aria-controls="collapseFunctions">
+        Functions <i class="fas fa-chevron-down float-right"></i>
+      </button>
+    </h5>
+  </div>
+  <div id="collapseFunctions" class="collapse" aria-labelledby="headingFunctions" data-parent="#mathsAccordion">
+    <div class="card-body" style="line-height: 1.8; font-size: 1.15rem; padding: 25px;">
+      
+      <h3 style="margin-top:0;">Functions – Leaving Cert Higher Level Revision</h3>
+      
+      <!-- 1. Definition and Notation -->
+      <h4 style="margin-top:20px;">1. Definition and Notation</h4>
+      <p>
+        A <strong>function</strong> \( f \) is a rule that assigns to every element \( x \) in a set \( D \) (the <em>domain</em>) a unique element \( f(x) \) in a set \( R \) (the <em>range</em>). It is denoted as:
+      </p>
+      <p style="text-align:center;">\( f: D \rightarrow R \)</p>
+      <p>
+        In exam answers, ensure you specify the domain and range if restrictions apply.
+      </p>
+      
+      <!-- 2. Domain and Range -->
+      <h4 style="margin-top:20px;">2. Domain and Range</h4>
+      <p>
+        The <em>domain</em> of a function is the set of all possible input values, while the <em>range</em> is the set of possible outputs. For example, for a function \( f(x)=\sqrt{x-2} \), the domain is \( x \ge 2 \) and the range is \( y \ge 0 \).
+      </p>
+      <p class="exam-tip">Tip: Always consider restrictions from operations like division or square roots.</p>
+      
+      <!-- 3. Types of Functions -->
+      <h4 style="margin-top:20px;">3. Types of Functions</h4>
+      <ul style="margin-left:20px;">
+        <li><strong>Linear Functions:</strong> \( f(x)=mx+c \). Their graphs are straight lines. The gradient \( m \) indicates the steepness.</li>
+        <li><strong>Quadratic Functions:</strong> \( f(x)=ax^2+bx+c \). Graphs are parabolic; the vertex is found at \( x=-\frac{b}{2a} \).</li>
+        <li><strong>Polynomial Functions:</strong> General form \( f(x)=a_nx^n+\dots+a_0 \). They can have multiple turning points.</li>
+        <li><strong>Rational Functions:</strong> \( f(x)=\frac{p(x)}{q(x)} \) where \( q(x) \neq 0 \). Note asymptotes and discontinuities.</li>
+        <li><strong>Exponential Functions:</strong> \( f(x)=a^x \) (with \( a>0 \) and \( a\neq 1 \)). Their graphs show rapid growth or decay.</li>
+        <li><strong>Logarithmic Functions:</strong> \( f(x)=\log_a(x) \), the inverse of exponential functions. They have vertical asymptotes.</li>
+      </ul>
+      
+      <!-- 4. Transformations -->
+      <h4 style="margin-top:20px;">4. Transformations of Functions</h4>
+      <p>
+        Transformations change the appearance of a function’s graph. Key transformations include:
+      </p>
+      <ul style="margin-left:20px;">
+        <li><strong>Vertical Shifts:</strong> \( f(x)+k \) shifts the graph up (if \( k>0 \)) or down (if \( k<0 \)).</li>
+        <li><strong>Horizontal Shifts:</strong> \( f(x-h) \) shifts the graph right (if \( h>0 \)) or left (if \( h<0 \)).</li>
+        <li><strong>Vertical Stretch/Compression:</strong> Multiplying by a constant \( a \); if \( |a|>1 \) the graph stretches, if \( 0<|a|<1 \) it compresses.</li>
+        <li><strong>Reflections:</strong> \( -f(x) \) reflects across the x-axis; \( f(-x) \) reflects across the y-axis.</li>
+      </ul>
+      <p class="exam-tip">Sketch transformed graphs to visualise how the original graph is altered.</p>
+      
+      <!-- 5. Composition of Functions -->
+      <h4 style="margin-top:20px;">5. Composition of Functions</h4>
+      <p>
+        The composition of two functions \( f \) and \( g \) is defined by:
+      </p>
+      <p style="text-align:center;">\( (f \circ g)(x)=f(g(x)) \)</p>
+      <p>
+        This operation is used to combine two functions into one. For instance, if \( f(x)=2x+3 \) and \( g(x)=x^2 \), then:
+      </p>
+      <p style="text-align:center;">\( (f \circ g)(x)=2x^2+3 \)</p>
+      
+      <!-- 6. Inverse Functions -->
+      <h4 style="margin-top:20px;">6. Inverse Functions</h4>
+      <p>
+        An inverse function \( f^{-1}(x) \) reverses the operation of \( f(x) \). A function must be one-to-one (injective) to have an inverse. To find the inverse, swap \( x \) and \( y \) in \( y=f(x) \) and solve for \( y \).
+      </p>
+      <p>
+        <strong>Example:</strong> If \( f(x)=3x-4 \), write \( y=3x-4 \), swap to \( x=3y-4 \) then solve:
+      </p>
+      <p style="text-align:center;">\( y=\frac{x+4}{3} \)</p>
+      
+      <!-- 7. Graphical Considerations -->
+      <h4 style="margin-top:20px;">7. Graphical Considerations</h4>
+      <p>
+        When sketching function graphs, ensure to mark key features such as:
+      </p>
+      <ul style="margin-left:20px;">
+        <li>Intercepts (where the graph crosses the axes).</li>
+        <li>Turning points and stationary points (found via differentiation).</li>
+        <li>Asymptotes, if applicable (for rational, exponential, or logarithmic functions).</li>
+        <li>Intervals of increase and decrease (from the sign of the derivative).</li>
+      </ul>
+      
+      <!-- 8. Exam Tips and Common Pitfalls -->
+      <h4 style="margin-top:20px;">8. Exam Tips</h4>
+      <ul style="margin-left:20px;">
+        <li>Show full working when performing transformations, composition, or finding inverses.</li>
+        <li>Use correct notation for composition (\( \circ \)) and inverse functions (\( f^{-1}(x) \)).</li>
+        <li>Practice sketching graphs and annotate them with key features.</li>
+        <li>Review past State Examination questions to understand typical exam phrasing and requirements.</li>
+      </ul>
+      
+      <!-- 9. Summary -->
+      <h4 style="margin-top:20px;">9. Summary</h4>
+      <p>
+        Functions form the backbone of Leaving Cert Higher Level Maths. A thorough understanding of definitions, domains, types, transformations, and inverses is crucial. Regular practice—especially with graph sketching and composite function problems—will build the necessary skills for exam success.
+      </p>
+      
+    </div>
+  </div>
+</div>
+      
+     <!-- Card for Geometry -->
+<div class="card" style="margin-bottom: 20px;">
+  <div class="card-header" id="headingGeometry">
+    <h5 class="mb-0">
+      <button class="btn btn-link text-white" style="width:100%; text-align:left;" 
+              data-toggle="collapse" data-target="#collapseGeometry" aria-expanded="false" aria-controls="collapseGeometry">
+        Geometry <i class="fas fa-chevron-down float-right"></i>
+      </button>
+    </h5>
+  </div>
+  <div id="collapseGeometry" class="collapse" aria-labelledby="headingGeometry" data-parent="#mathsAccordion">
+    <div class="card-body" style="line-height: 1.8; font-size: 1.15rem; padding: 25px;">
+      
+      <h3 style="margin-top:0;">Geometry – Leaving Cert Higher Level Revision</h3>
+      <p>
+        These notes cover the essential geometric principles and formulas you need to master for Leaving Cert Higher Level Maths. All formulas and theorems have been verified against official Leaving Cert log tables.
+      </p>
+      
+      <!-- 1. Basic Concepts and Definitions -->
+      <h4 style="margin-top:20px;">1. Basic Concepts and Definitions</h4>
+      <p>
+        Geometry is the study of figures and their properties. Key terms include:
+      </p>
+      <ul style="margin-left:20px;">
+        <li><strong>Point:</strong> An exact location in space.</li>
+        <li><strong>Line:</strong> A straight, one-dimensional figure extending infinitely in both directions.</li>
+        <li><strong>Angle:</strong> Formed by two rays (sides) sharing a common endpoint (vertex).</li>
+        <li><strong>Plane:</strong> A flat, two-dimensional surface that extends indefinitely.</li>
+      </ul>
+      
+      <!-- 2. Fundamental Theorems -->
+      <h4 style="margin-top:20px;">2. Fundamental Theorems</h4>
+      <ul style="margin-left:20px;">
+        <li><strong>Pythagoras’ Theorem:</strong> In a right-angled triangle, \(a^2 + b^2 = c^2\).</li>
+        <li><strong>Angle Sum Theorem:</strong> The sum of the interior angles of a triangle is \(180^\circ\).</li>
+        <li><strong>Exterior Angle Theorem:</strong> An exterior angle is equal to the sum of the two opposite interior angles.</li>
+      </ul>
+      
+      <!-- 3. Areas and Perimeters -->
+      <h4 style="margin-top:20px;">3. Areas and Perimeters</h4>
+      <p>
+        Knowing the area and perimeter formulas is critical. For example:
+      </p>
+      <ul style="margin-left:20px;">
+        <li><strong>Triangle:</strong> \( \text{Area} = \frac{1}{2} \times \text{base} \times \text{height} \)</li>
+        <li><strong>Rectangle:</strong> \( \text{Area} = \text{length} \times \text{width} \); \( \text{Perimeter} = 2(\text{length}+\text{width}) \)</li>
+        <li><strong>Parallelogram:</strong> \( \text{Area} = \text{base} \times \text{vertical height} \)</li>
+        <li><strong>Trapezium:</strong> \( \text{Area} = \frac{1}{2}(a+b) \times h \), where \(a\) and \(b\) are the lengths of the parallel sides.</li>
+        <li><strong>Circle:</strong> \( \text{Circumference} = 2\pi r \); \( \text{Area} = \pi r^2 \)</li>
+      </ul>
+      
+      <!-- 4. Coordinate Geometry -->
+      <h4 style="margin-top:20px;">4. Coordinate Geometry</h4>
+      <p>
+        Coordinate geometry applies algebra to geometry:
+      </p>
+      <ul style="margin-left:20px;">
+        <li><strong>Equation of a Line:</strong> \( y = mx + c \), where \( m \) is the gradient.</li>
+        <li><strong>Distance Formula:</strong> \( d = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2} \).</li>
+        <li><strong>Midpoint Formula:</strong> \( \left(\frac{x_1+x_2}{2}, \frac{y_1+y_2}{2}\right) \).</li>
+      </ul>
+      
+      <!-- 5. Exam Tips and Common Pitfalls -->
+      <h4 style="margin-top:20px;">5. Exam Tips and Common Pitfalls</h4>
+      <ul style="margin-left:20px;">
+        <li>Always label your diagrams with accurate measurements and proper notation.</li>
+        <li>Memorise key theorems and formulas as they are frequently tested.</li>
+        <li>When proving congruence or similarity, be concise and ensure your reasoning is logically sound.</li>
+        <li>Check all angle sums and relationships carefully in your answers.</li>
+        <li>Practice past State Examination questions to become familiar with exam style and terminology.</li>
+      </ul>
+      
+      <!-- 6. Summary -->
+      <h4 style="margin-top:20px;">6. Summary</h4>
+      <p>
+        Geometry in Leaving Cert Higher Level Maths requires a strong grasp of fundamental definitions, key theorems, and accurate application of formulas. Focus on clear, well-labelled diagrams and precise use of official terminology. Regular practice will build the skills needed to tackle exam questions confidently.
+      </p>
+      
+    </div>
+  </div>
+</div>
+      
+     <!-- Card for Logs -->
+<div class="card" style="margin-bottom: 20px;">
+  <div class="card-header" id="headingLogs">
+    <h5 class="mb-0">
+      <button class="btn btn-link text-white" style="width:100%; text-align:left;" 
+              data-toggle="collapse" data-target="#collapseLogs" aria-expanded="false" aria-controls="collapseLogs">
+        Logs <i class="fas fa-chevron-down float-right"></i>
+      </button>
+    </h5>
+  </div>
+  <div id="collapseLogs" class="collapse" aria-labelledby="headingLogs" data-parent="#mathsAccordion">
+    <div class="card-body" style="line-height: 1.8; font-size: 1.15rem; padding: 25px;">
+      
+      <h3 style="margin-top:0;">Logs – Leaving Cert Higher Level Revision</h3>
+      <p>
+        Logs (logarithms) are the inverses of exponential functions. These notes cover definitions, key properties, examples, and exam tips using official Leaving Cert terminology.
+      </p>
+      
+      <!-- 1. Definition and Exponential Relationship -->
+      <h4 style="margin-top:20px;">1. Definition and Exponential Relationship</h4>
+      <p>
+        For a positive base \(a\) (where \(a \neq 1\)), the logarithm of a number \(x\) is defined as the exponent \(y\) such that:
+      </p>
+      <p style="text-align:center;">\( \log_a x = y \) if and only if \( a^y = x \)</p>
+      <p>
+        This relationship underpins all logarithmic operations.
+      </p>
+      
+      <!-- 2. Key Logarithmic Properties -->
+      <h4 style="margin-top:20px;">2. Key Properties</h4>
+      <ul style="margin-left:20px;">
+        <li><strong>Product Rule:</strong> \( \log_a(MN) = \log_a M + \log_a N \)</li>
+        <li><strong>Quotient Rule:</strong> \( \log_a\left(\frac{M}{N}\right) = \log_a M - \log_a N \)</li>
+        <li><strong>Power Rule:</strong> \( \log_a(M^p) = p\cdot \log_a M \)</li>
+        <li><strong>Change-of-Base Formula:</strong> \( \log_a M = \frac{\log_b M}{\log_b a} \) (often using \(b=10\) or \(b=e\))</li>
+      </ul>
+      
+      <!-- 3. Worked Examples -->
+      <h4 style="margin-top:20px;">3. Worked Examples</h4>
+      <p>
+        <strong>Example 1:</strong> Simplify \( \log_2(8 \times 4) \).<br>
+        <em>Solution:</em> \( \log_2(8 \times 4) = \log_2 8 + \log_2 4 = 3 + 2 = 5 \).
+      </p>
+      <p>
+        <strong>Example 2:</strong> Evaluate \( \log_3 81 \).<br>
+        <em>Solution:</em> Since \(81 = 3^4\), \( \log_3 81 = 4 \).
+      </p>
+      <p>
+        <strong>Example 3:</strong> Use the change-of-base formula to evaluate \( \log_2 10 \).<br>
+        <em>Solution:</em> \( \log_2 10 = \frac{\log_{10} 10}{\log_{10} 2} = \frac{1}{\log_{10} 2} \). Use a calculator to approximate \( \log_{10} 2 \approx 0.301 \), so \( \log_2 10 \approx 3.32 \).
+      </p>
+      <p>
+        <strong>Example 4:</strong> Express \( 10 \) as an exponent of \( e \) using natural logarithms.<br>
+        <em>Solution:</em> Write \( 10 = e^{\ln 10} \). Since \( \ln 10 \) is the natural logarithm of 10, this shows the inverse relationship between logs and exponentials.
+      </p>
+      
+      <!-- 4. Exam Tips and Common Pitfalls -->
+      <h4 style="margin-top:20px;">4. Exam Tips and Common Pitfalls</h4>
+      <ul style="margin-left:20px;">
+        <li>Always ensure the argument \( x \) in \( \log_a x \) is positive.</li>
+        <li>Convert percentage rates and other values into their correct decimal form before applying formulas.</li>
+        <li>Write out the properties clearly when solving multi-step problems.</li>
+        <li>Practice rewriting exponential equations in logarithmic form and vice versa.</li>
+        <li>Double-check your calculations and use the change-of-base formula if needed.</li>
+      </ul>
+      
+      <!-- 5. Summary -->
+      <h4 style="margin-top:20px;">5. Summary</h4>
+      <p>
+        Logs are a critical component of Leaving Cert Higher Level Maths, providing the inverse operation to exponentials. Mastery of logarithmic properties, including the product, quotient, and power rules along with the change-of-base formula, is essential. Regular practice with worked examples and exam-style questions will solidify your understanding.
+      </p>
+      
+    </div>
+  </div>
+</div>
+      
+      <!-- Card 13: Probability -->
+      <!-- Card for Probability -->
+<div class="card" style="margin-bottom: 20px;">
+  <div class="card-header" id="headingProbability">
+    <h5 class="mb-0">
+      <button class="btn btn-link text-white" style="width:100%; text-align:left;" 
+              data-toggle="collapse" data-target="#collapseProbability" aria-expanded="false" aria-controls="collapseProbability">
+        Probability <i class="fas fa-chevron-down float-right"></i>
+      </button>
+    </h5>
+  </div>
+  <div id="collapseProbability" class="collapse" aria-labelledby="headingProbability" data-parent="#mathsAccordion">
+    <div class="card-body" style="line-height: 1.8; font-size: 1.15rem; padding: 25px;">
+      
+      <h3 style="margin-top:0;">Probability – Detailed Leaving Cert Revision</h3>
+      <p>
+        Probability is the branch of mathematics that deals with the likelihood of events occurring. In the Leaving Cert Higher Level syllabus, you are expected to understand both theoretical and experimental probability, as well as various counting techniques.
+      </p>
+      
+      <!-- 1. Basic Definitions and Notation -->
+      <h4 style="margin-top:20px;">1. Basic Definitions and Notation</h4>
+      <p>
+        The probability of an event \(E\) is defined as:
+      </p>
+      <p style="text-align:center;">\( P(E) = \frac{\text{Number of favourable outcomes}}{\text{Total number of outcomes}} \)</p>
+      <p>
+        <strong>Sample Space (S):</strong> The set of all possible outcomes of an experiment.<br>
+        <strong>Favourable Outcomes:</strong> The outcomes that satisfy the event criteria.
+      </p>
+      <p class="exam-tip">Ensure that the total probability of the sample space equals 1.</p>
+      
+      <!-- 2. Compound Events and Rules -->
+      <h4 style="margin-top:20px;">2. Compound Events and Rules</h4>
+      <p>
+        When dealing with multiple events, you must consider how they interact:
+      </p>
+      <ul style="margin-left:20px;">
+        <li><strong>Mutually Exclusive Events:</strong> Events that cannot occur simultaneously. For these, 
+          \( P(A \text{ or } B) = P(A) + P(B) \).
+        </li>
+        <li><strong>Non-Mutually Exclusive Events:</strong> For events that can occur together, 
+          \( P(A \text{ or } B) = P(A) + P(B) - P(A \text{ and } B) \).
+        </li>
+        <li><strong>Independent Events:</strong> If the occurrence of one event does not affect another, 
+          \( P(A \text{ and } B) = P(A) \times P(B) \).
+        </li>
+      </ul>
+      
+      <!-- 3. Conditional Probability -->
+      <h4 style="margin-top:20px;">3. Conditional Probability</h4>
+      <p>
+        Conditional probability is the probability of an event occurring given that another event has occurred:
+      </p>
+      <p style="text-align:center;">\( P(A|B) = \frac{P(A \text{ and } B)}{P(B)} \), provided \( P(B) > 0 \).</p>
+      <p>
+        This concept is especially important for dependent events.
+      </p>
+      
+      <!-- 4. Combinatorial Analysis -->
+      <h4 style="margin-top:20px;">4. Combinatorial Analysis</h4>
+      <p>
+        Many probability problems require counting techniques. The two main tools are:
+      </p>
+      <ul style="margin-left:20px;">
+        <li>
+          <strong>Permutations:</strong> The number of arrangements of \( n \) objects is \( n! \). 
+          For arranging \( r \) objects from \( n \): \( P(n, r) = \frac{n!}{(n-r)!} \).
+        </li>
+        <li>
+          <strong>Combinations:</strong> The number of ways to choose \( r \) objects from \( n \) without regard to order is given by:
+          \[
+          C(n, r) = \binom{n}{r} = \frac{n!}{r!(n-r)!}
+          \]
+        </li>
+      </ul>
+      <p class="exam-tip">Be sure to use the correct formula based on whether order matters.</p>
+      
+      <!-- 5. Worked Examples -->
+      <h4 style="margin-top:20px;">5. Worked Examples</h4>
+      <p>
+        <strong>Example 1:</strong> In a deck of 52 cards, what is the probability of drawing a heart?<br>
+        <em>Solution:</em> There are 13 hearts, so \( P(\text{heart}) = \frac{13}{52} = \frac{1}{4} \).
+      </p>
+      <p>
+        <strong>Example 2:</strong> Two dice are rolled. Find the probability that the sum is 7.<br>
+        <em>Solution:</em> There are 36 outcomes in total. The favourable outcomes for a sum of 7 are: (1,6), (2,5), (3,4), (4,3), (5,2), (6,1), so \( P(\text{sum } 7) = \frac{6}{36} = \frac{1}{6} \).
+      </p>
+      <p>
+        <strong>Example 3:</strong> A bag contains 5 red, 4 blue, and 3 green balls. If one ball is drawn at random, what is the probability it is not blue?<br>
+        <em>Solution:</em> Total outcomes = 12. Favourable outcomes (red + green) = \( 5 + 3 = 8 \). Thus, \( P(\text{not blue}) = \frac{8}{12} = \frac{2}{3} \).
+      </p>
+      <p>
+        <strong>Example 4 (Conditional):</strong> In a class, 60% of students passed Maths, and 40% passed both Maths and English. What is the probability that a student passed English given that they passed Maths?<br>
+        <em>Solution:</em> \( P(\text{English}|\text{Maths}) = \frac{0.40}{0.60} = \frac{2}{3} \).
+      </p>
+      
+      <!-- 6. Exam Tips and Common Pitfalls -->
+      <h4 style="margin-top:20px;">6. Exam Tips and Common Pitfalls</h4>
+      <ul style="margin-left:20px;">
+        <li>Always clearly define your sample space and ensure total probability sums to 1.</li>
+        <li>Distinguish between mutually exclusive and non-mutually exclusive events.</li>
+        <li>For dependent events, use conditional probability correctly.</li>
+        <li>When counting outcomes, check if order matters (use permutations) or not (use combinations).</li>
+        <li>Practice past State Examination questions to become familiar with typical question formats and wording.</li>
+      </ul>
+      
+      <!-- 7. Summary -->
+      <h4 style="margin-top:20px;">7. Summary</h4>
+      <p>
+        Probability in Leaving Cert Higher Level Maths involves understanding the basic definitions, the relationships between events, and the use of counting techniques. Mastery of conditional probability and combinatorial methods is essential for tackling exam questions. Regular practice with worked examples and exam-style problems will build your confidence and accuracy.
+      </p>
+      
+    </div>
+  </div>
+</div>      
+     <!-- Card for Sequences & Series -->
+<div class="card" style="margin-bottom: 20px;">
+  <div class="card-header" id="headingSequences">
+    <h5 class="mb-0">
+      <button class="btn btn-link text-white" style="width:100%; text-align:left;" 
+              data-toggle="collapse" data-target="#collapseSequences" aria-expanded="false" aria-controls="collapseSequences">
+        Sequences &amp; Series <i class="fas fa-chevron-down float-right"></i>
+      </button>
+    </h5>
+  </div>
+  <div id="collapseSequences" class="collapse" aria-labelledby="headingSequences" data-parent="#mathsAccordion">
+    <div class="card-body" style="line-height: 1.8; font-size: 1.15rem; padding: 25px;">
+      
+      <h3 style="margin-top:0;">Sequences &amp; Series – Leaving Cert Higher Level Revision</h3>
+      <p>
+        In Leaving Cert Higher Level Maths, sequences and series are critical topics that require a solid understanding of both arithmetic and geometric progressions, as well as their sums. The notes below cover definitions, key formulas, worked examples, exam tips, and a summary.
+      </p>
+      
+      <!-- 1. Arithmetic Sequences -->
+      <h4 style="margin-top:20px;">1. Arithmetic Sequences</h4>
+      <p>
+        An arithmetic sequence is a list of numbers in which each term differs from the previous one by a constant value called the <strong>common difference</strong> (\(d\)).
+      </p>
+      <p style="text-align:center;">\( a_n = a + (n-1)d \)</p>
+      <p>
+        The sum of the first \(n\) terms, denoted by \(S_n\), is given by:
+      </p>
+      <p style="text-align:center;">\( S_n = \frac{n}{2} \left[2a + (n-1)d\right] \)</p>
+      <p class="exam-tip">Tip: Always check the sign of \(d\). A negative \(d\) means the sequence is decreasing.</p>
+      <p>
+        <strong>Example:</strong> For the sequence \( 3, 7, 11, \dots \), where \( a=3 \) and \( d=4 \):<br>
+        The 10th term is \( a_{10} = 3 + (10-1) \times 4 = 3 + 36 = 39 \).<br>
+        The sum of the first 10 terms is \( S_{10} = \frac{10}{2} [2(3) + 9 \times 4] = 5 \times (6 + 36) = 5 \times 42 = 210 \).
+      </p>
+      
+      <!-- 2. Geometric Sequences -->
+      <h4 style="margin-top:20px;">2. Geometric Sequences</h4>
+      <p>
+        A geometric sequence is a list of numbers where each term is obtained by multiplying the previous term by a constant ratio \( r \).
+      </p>
+      <p style="text-align:center;">\( a_n = a \cdot r^{n-1} \)</p>
+      <p>
+        The sum of the first \( n \) terms (for \( r \neq 1 \)) is:
+      </p>
+      <p style="text-align:center;">\( S_n = a \frac{1 - r^n}{1 - r} \)</p>
+      <p class="exam-tip">Tip: For an infinite geometric series, the sum converges only if \( |r| < 1 \).</p>
+      <p>
+        <strong>Example:</strong> For the sequence \( 5, 10, 20, \dots \) where \( a=5 \) and \( r=2 \):<br>
+        The 5th term is \( a_5 = 5 \times 2^{4} = 5 \times 16 = 80 \).<br>
+        The sum of the first 5 terms is \( S_5 = 5 \frac{1-2^5}{1-2} = 5 \frac{1-32}{-1} = 5 \times 31 = 155 \).
+      </p>
+      
+      <!-- 3. Infinite Geometric Series -->
+      <h4 style="margin-top:20px;">3. Infinite Geometric Series</h4>
+      <p>
+        If \( |r| < 1 \), the infinite series converges to:
+      </p>
+      <p style="text-align:center;">\( S_\infty = \frac{a}{1-r} \)</p>
+      <p>
+        <strong>Example:</strong> For a series with \( a=10 \) and \( r=0.8 \):<br>
+        \( S_\infty = \frac{10}{1-0.8} = \frac{10}{0.2} = 50 \).
+      </p>
+      
+      <!-- 4. Worked Example with Mixed Concepts -->
+      <h4 style="margin-top:20px;">4. Extended Worked Example</h4>
+      <p>
+        <strong>Problem:</strong> An arithmetic sequence has a first term of 8 and a common difference of 3. A geometric sequence has a first term of 2 and a common ratio of 1.5. Find:
+      </p>
+      <ul style="margin-left:20px;">
+        <li>The 12th term of the arithmetic sequence.</li>
+        <li>The sum of the first 12 terms of the arithmetic sequence.</li>
+        <li>The 6th term of the geometric sequence.</li>
+        <li>The sum of the first 6 terms of the geometric sequence.</li>
+      </ul>
+      <p>
+        <strong>Solution:</strong>
+      </p>
+      <p style="text-align:center;">Arithmetic: \( a_{12} = 8 + 11 \times 3 = 41 \)</p>
+      <p style="text-align:center;">\( S_{12} = \frac{12}{2}[2 \times 8 + 11 \times 3] = 6 \times (16 + 33) = 6 \times 49 = 294 \)</p>
+      <p style="text-align:center;">Geometric: \( a_6 = 2 \times 1.5^{5} \approx 2 \times 7.5938 \approx 15.19 \)</p>
+      <p style="text-align:center;">\( S_6 = 2 \frac{1-1.5^6}{1-1.5} \approx 2 \frac{1-11.39}{-0.5} \approx 2 \times 20.78 \approx 41.56 \)</p>
+      
+      <!-- 5. Exam Tips and Common Pitfalls -->
+      <h4 style="margin-top:20px;">5. Exam Tips and Common Pitfalls</h4>
+      <ul style="margin-left:20px;">
+        <li>Clearly determine if the sequence is arithmetic or geometric before applying formulas.</li>
+        <li>For arithmetic sequences, check that the common difference \(d\) is consistent.</li>
+        <li>For geometric sequences, ensure the common ratio \(r\) is correctly identified; note if it is negative or greater than 1.</li>
+        <li>When using the infinite geometric series formula, confirm that \(|r| < 1\).</li>
+        <li>Always show your working; partial credit is awarded for correct methodology.</li>
+      </ul>
+      
+      <!-- 6. Summary -->
+      <h4 style="margin-top:20px;">6. Summary</h4>
+      <p>
+        Sequences and series are essential topics in Leaving Cert Higher Level Maths. Master arithmetic sequences with their linear growth and geometric sequences with exponential behavior. Familiarise yourself with sum formulas, and practise extended problems to build accuracy and speed.
+      </p>
+      
+    </div>
+  </div>
+</div>
+      
+     <!-- Card for Statistics -->
+<div class="card" style="margin-bottom: 20px;">
+  <div class="card-header" id="headingStatistics">
+    <h5 class="mb-0">
+      <button class="btn btn-link text-white" style="width:100%; text-align:left;" 
+              data-toggle="collapse" data-target="#collapseStatistics" aria-expanded="false" aria-controls="collapseStatistics">
+        Statistics <i class="fas fa-chevron-down float-right"></i>
+      </button>
+    </h5>
+  </div>
+  <div id="collapseStatistics" class="collapse" aria-labelledby="headingStatistics" data-parent="#mathsAccordion">
+    <div class="card-body" style="line-height: 1.8; font-size: 1.15rem; padding: 25px;">
+      
+      <h3 style="margin-top:0;">Statistics – Leaving Cert Higher Level Revision</h3>
+      <p>
+        In Leaving Cert Higher Level Maths, Statistics focuses on summarising, interpreting, and drawing conclusions from data. These notes cover key concepts in descriptive statistics, including measures of central tendency, measures of dispersion, and frequency distributions, along with worked examples and exam tips.
+      </p>
+      
+      <!-- 1. Descriptive Statistics -->
+      <h4 style="margin-top:20px;">1. Descriptive Statistics</h4>
+      <p>
+        Descriptive statistics are used to summarise a data set. The primary measures include:
+      </p>
+      <ul style="margin-left:20px;">
+        <li><strong>Mean:</strong> The arithmetic average, calculated as 
+          \( \bar{x} = \frac{\sum_{i=1}^{n} x_i}{n} \).</li>
+        <li><strong>Median:</strong> The middle value in an ordered data set. If the number of observations is even, it is the average of the two middle values.</li>
+        <li><strong>Mode:</strong> The value(s) that occur most frequently in the data set.</li>
+        <li><strong>Range:</strong> The difference between the largest and smallest values.</li>
+      </ul>
+      <p class="exam-tip">Tip: Always arrange your data in ascending order before determining the median and mode.</p>
+      
+      <!-- 2. Measures of Dispersion -->
+      <h4 style="margin-top:20px;">2. Measures of Dispersion</h4>
+      <p>
+        Dispersion measures the spread of data. Key measures include:
+      </p>
+      <ul style="margin-left:20px;">
+        <li><strong>Variance (Sample):</strong> 
+          \[
+          s^2 = \frac{\sum_{i=1}^{n}(x_i-\bar{x})^2}{n-1}
+          \]
+          which indicates the average squared deviation from the mean.
+        </li>
+        <li><strong>Standard Deviation:</strong> 
+          \( s = \sqrt{s^2} \),
+          representing the dispersion in the same units as the data.
+        </li>
+      </ul>
+      <p class="exam-tip">Tip: Carefully perform each step when computing variance and standard deviation to avoid calculation errors.</p>
+      
+      <!-- 3. Frequency Distributions -->
+      <h4 style="margin-top:20px;">3. Frequency Distributions</h4>
+      <p>
+        A frequency distribution organizes data into classes (or intervals) and shows the number of observations (frequency) in each class. Common tools include:
+      </p>
+      <ul style="margin-left:20px;">
+        <li><strong>Frequency Table:</strong> A table that lists each class interval and its corresponding frequency.</li>
+        <li><strong>Histogram:</strong> A graphical representation of the frequency distribution where the height of each bar reflects the frequency of the interval.</li>
+      </ul>
+      <p class="exam-tip">Tip: Ensure your class intervals are of equal width (unless stated otherwise) and label your axes clearly on a histogram.</p>
+      
+      <!-- 4. Worked Example -->
+      <h4 style="margin-top:20px;">4. Worked Example</h4>
+      <p>
+        <strong>Problem:</strong> Given the data set: 4, 8, 6, 5, 3, 7, 9, 5, calculate the mean, median, mode, range, variance, and standard deviation.
+      </p>
+      <ul style="margin-left:20px;">
+        <li>
+          <strong>Mean:</strong> \( \bar{x} = \frac{4+8+6+5+3+7+9+5}{8} = \frac{47}{8} \approx 5.88 \).
+        </li>
+        <li>
+          <strong>Median:</strong> Arrange the data: 3, 4, 5, 5, 6, 7, 8, 9. Median = \( \frac{5+6}{2} = 5.5 \).
+        </li>
+        <li>
+          <strong>Mode:</strong> The value 5 appears most frequently, so mode = 5.
+        </li>
+        <li>
+          <strong>Range:</strong> \( 9 - 3 = 6 \).
+        </li>
+        <li>
+          <strong>Variance:</strong> First, compute each squared difference:
+          \[
+          (3-5.88)^2,\ (4-5.88)^2,\ \dots,\ (9-5.88)^2.
+          \]
+          Then, \( s^2 = \frac{\text{sum of squared differences}}{8-1} \). (Calculate each step carefully.)
+        </li>
+        <li>
+          <strong>Standard Deviation:</strong> \( s = \sqrt{s^2} \).
+        </li>
+      </ul>
+      <p class="exam-tip">Tip: Show all your work to gain partial credit even if a final numerical value is slightly off.</p>
+      
+      <!-- 5. Exam Tips and Common Pitfalls -->
+      <h4 style="margin-top:20px;">5. Exam Tips and Common Pitfalls</h4>
+      <ul style="margin-left:20px;">
+        <li>Always list your data in order when calculating the median.</li>
+        <li>Ensure you understand whether you are working with a sample or an entire population, as this affects the variance formula.</li>
+        <li>Double-check your frequency distributions; ensure the total frequency matches the data count.</li>
+        <li>Keep your working neat and clearly labelled to secure partial marks.</li>
+        <li>Practice past State Examination questions to identify common pitfalls in data analysis.</li>
+      </ul>
+      
+      <!-- 6. Summary -->
+      <h4 style="margin-top:20px;">6. Summary</h4>
+      <p>
+        Mastery of statistics in Leaving Cert Higher Level Maths involves understanding the key measures of central tendency and dispersion, as well as effectively organising data into frequency distributions. Consistent practice, accurate calculations, and clear, labelled work are crucial to success in exams.
+      </p>
+      
+    </div>
+  </div>
+</div>
+      
+<!-- Card for The Circle -->
+<div class="card" style="margin-bottom: 20px;">
+  <div class="card-header" id="headingCircle">
+    <h5 class="mb-0">
+      <button class="btn btn-link text-white" style="width:100%; text-align:left;" 
+              data-toggle="collapse" data-target="#collapseCircle" aria-expanded="false" aria-controls="collapseCircle">
+        The Circle <i class="fas fa-chevron-down float-right"></i>
+      </button>
+    </h5>
+  </div>
+  <div id="collapseCircle" class="collapse" aria-labelledby="headingCircle" data-parent="#mathsAccordion">
+    <div class="card-body" style="line-height: 1.8; font-size: 1.15rem; padding: 25px;">
+      
+      <h3 style="margin-top:0;">The Circle – Leaving Cert Higher Level Revision</h3>
+      <p>
+        This section covers essential circle geometry concepts using Leaving Cert terminology. Topics include key formulas, properties, and relationships, along with diagrams for tangents, circles touching internally, and circles touching externally.
+      </p>
+      
+      <!-- 1. Basic Definitions and Key Formulas -->
+      <h4 style="margin-top:20px;">1. Basic Definitions and Key Formulas</h4>
+      <ul style="margin-left:20px;">
+        <li><strong>Radius (\(r\)):</strong> The distance from the centre to any point on the circle.</li>
+        <li><strong>Diameter (\(d\)):</strong> \( d = 2r \).</li>
+        <li><strong>Circumference (\(C\)):</strong> \( C = 2\pi r \) or \( C = \pi d \).</li>
+        <li><strong>Area (\(A\)):</strong> \( A = \pi r^2 \).</li>
+      </ul>
+      
+      <!-- 2. Chords, Arcs, and Angles -->
+      <h4 style="margin-top:20px;">2. Chords, Arcs, and Angles</h4>
+      <ul style="margin-left:20px;">
+        <li><strong>Central Angle:</strong> An angle with its vertex at the centre. Its measure equals the intercepted arc.</li>
+        <li><strong>Inscribed Angle:</strong> An angle formed by two chords meeting on the circle; it measures half the intercepted arc.</li>
+        <li><strong>Chord:</strong> A line segment whose endpoints lie on the circle. Equal chords subtend equal angles at the centre.</li>
+      </ul>
+      
+      <!-- 3. Tangents and Secants -->
+      <h4 style="margin-top:20px;">3. Tangents and Secants</h4>
+      <p>
+        A <strong>tangent</strong> touches the circle at exactly one point and is perpendicular to the radius at the point of contact. A <strong>secant</strong> intersects the circle at two points.
+      </p>
+      
+      <!-- 4. Diagrams -->
+      <h4 style="margin-top:20px;">4. Diagrams</h4>
+      
+      <!-- 4a. Tangent Diagram -->
+      <h5 style="margin-top:15px;">a. Tangent to a Circle</h5>
+      <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" style="display:block; margin:auto;">
+        <!-- Circle -->
+        <circle cx="100" cy="100" r="80" fill="none" stroke="black" stroke-width="2"/>
+        <!-- Radius drawn to tangent point (top of circle) -->
+        <line x1="100" y1="100" x2="100" y2="20" stroke="red" stroke-width="2"/>
+        <!-- Tangent line at the top (horizontal) -->
+        <line x1="20" y1="20" x2="180" y2="20" stroke="blue" stroke-width="2"/>
+        <!-- Right angle marker -->
+        <rect x="90" y="20" width="10" height="10" fill="black"/>
+      </svg>
+      <p class="exam-tip" style="text-align:center;">A tangent is perpendicular to the radius at the point of contact.</p>
+      
+      <!-- 4b. Circles Touching Internally -->
+      <h5 style="margin-top:15px;">b. Circles Touching Internally</h5>
+      <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg" style="display:block; margin:auto;">
+        <!-- Outer circle -->
+        <circle cx="150" cy="150" r="80" fill="none" stroke="black" stroke-width="2"/>
+        <!-- Inner circle (touches internally) -->
+        <circle cx="150" cy="190" r="40" fill="none" stroke="red" stroke-width="2"/>
+        <!-- Mark touching point on outer circle -->
+        <circle cx="150" cy="230" r="3" fill="blue"/>
+        <!-- Dashed line between centres -->
+        <line x1="150" y1="150" x2="150" y2="190" stroke="gray" stroke-dasharray="5,5"/>
+      </svg>
+      <p class="exam-tip" style="text-align:center;">Circles touch internally when the distance between centres equals the difference of their radii.</p>
+      
+      <!-- 4c. Circles Touching Externally -->
+      <h5 style="margin-top:15px;">c. Circles Touching Externally</h5>
+      <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg" style="display:block; margin:auto;">
+        <!-- First circle -->
+        <circle cx="100" cy="100" r="50" fill="none" stroke="black" stroke-width="2"/>
+        <!-- Second circle -->
+        <circle cx="200" cy="100" r="50" fill="none" stroke="red" stroke-width="2"/>
+        <!-- Mark touching point -->
+        <circle cx="150" cy="100" r="3" fill="blue"/>
+        <!-- Dashed line between centres -->
+        <line x1="100" y1="100" x2="200" y2="100" stroke="gray" stroke-dasharray="5,5"/>
+      </svg>
+      <p class="exam-tip" style="text-align:center;">Circles touch externally when the distance between their centres equals the sum of their radii.</p>
+      
+      <!-- 5. Worked Examples -->
+      <h4 style="margin-top:20px;">5. Worked Examples</h4>
+      <p>
+        <strong>Example 1:</strong> For a circle with \( r = 7 \) cm, find the circumference and area.<br>
+        <em>Solution:</em> \( C = 2\pi \times 7 = 14\pi \) cm and \( A = \pi \times 7^2 = 49\pi \) cm<sup>2</sup>.
+      </p>
+      <p>
+        <strong>Example 2:</strong> An inscribed angle measures \( 30^\circ \). Determine its intercepted arc.<br>
+        <em>Solution:</em> The intercepted arc is \( 2 \times 30^\circ = 60^\circ \).
+      </p>
+      <p>
+        <strong>Example 3:</strong> A tangent touches a circle with \( r = 5 \) cm. If the distance from the centre to a point on the tangent is 13 cm, calculate the tangent segment’s length.<br>
+        <em>Solution:</em> Using the Pythagorean theorem, \( t = \sqrt{13^2 - 5^2} = \sqrt{169 - 25} = \sqrt{144} = 12 \) cm.
+      </p>
+      
+      <!-- 6. Exam Tips and Common Pitfalls -->
+      <h4 style="margin-top:20px;">6. Exam Tips and Common Pitfalls</h4>
+      <ul style="margin-left:20px;">
+        <li>Always label diagrams with clear measurements and annotations.</li>
+        <li>Memorise the key formulas: \( C = 2\pi r \) and \( A = \pi r^2 \).</li>
+        <li>Use consistent units throughout your calculations.</li>
+        <li>Double-check intercepted arc calculations when dealing with inscribed angles.</li>
+        <li>Practice a range of exam questions involving tangency and circle interactions.</li>
+      </ul>
+      
+      <!-- 7. Summary -->
+      <h4 style="margin-top:20px;">7. Summary</h4>
+      <p>
+        Mastery of circle geometry in Leaving Cert Higher Level Maths requires a solid grasp of key formulas and properties. Clear diagrams, thorough practice, and precise application of concepts—such as tangents and the conditions for circles touching internally or externally—are essential for exam success.
+      </p>
+      
+    </div>
+  </div>
+</div>
+<!-- Card for Trigonometry -->
+<div class="card" style="margin-bottom: 20px;">
+  <div class="card-header" id="headingTrigonometry">
+    <h5 class="mb-0">
+      <button class="btn btn-link text-white" style="width:100%; text-align:left;" 
+              data-toggle="collapse" data-target="#collapseTrigonometry" aria-expanded="false" aria-controls="collapseTrigonometry">
+        Trigonometry <i class="fas fa-chevron-down float-right"></i>
+      </button>
+    </h5>
+  </div>
+  <div id="collapseTrigonometry" class="collapse" aria-labelledby="headingTrigonometry" data-parent="#mathsAccordion">
+    <div class="card-body" style="line-height: 1.8; font-size: 1.15rem; padding: 25px;">
+      
+      <h3 style="margin-top:0;">Trigonometry – Leaving Cert Higher Level Revision</h3>
+      <p>
+        Trigonometry is a cornerstone of Leaving Cert Higher Level Maths. Mastery of trigonometric ratios, identities, the unit circle, and solving equations is vital. This section covers key definitions, formulas, and worked examples with clear diagrams.
+      </p>
+      
+      <!-- 1. Basic Definitions and Ratios -->
+      <h4 style="margin-top:20px;">1. Basic Definitions and Trigonometric Ratios</h4>
+      <p>In any right-angled triangle (with an acute angle \( \theta \)):</p>
+      <ul style="margin-left:20px;">
+        <li><strong>Sine:</strong> \( \sin\theta = \frac{\text{Opposite side}}{\text{Hypotenuse}} \)</li>
+        <li><strong>Cosine:</strong> \( \cos\theta = \frac{\text{Adjacent side}}{\text{Hypotenuse}} \)</li>
+        <li><strong>Tangent:</strong> \( \tan\theta = \frac{\sin\theta}{\cos\theta} = \frac{\text{Opposite side}}{\text{Adjacent side}} \)</li>
+      </ul>
+      <p class="exam-tip">Tip: Identify sides relative to the chosen acute angle and memorise standard values (e.g. for \(30^\circ\), \(45^\circ\), \(60^\circ\)).</p>
+      
+      <!-- Right-Angled Triangle Diagram -->
+      <h5 style="margin-top:15px;">Right-Angled Triangle Diagram</h5>
+      <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" style="display:block; margin:auto;">
+        <!-- Triangle with vertices: A(50,150), B(50,50), C(150,150) -->
+        <polygon points="50,150 50,50 150,150" fill="none" stroke="black" stroke-width="2"/>
+        <!-- Right angle marker at A (50,150) -->
+        <polyline points="50,150 60,150 60,140" fill="none" stroke="black" stroke-width="2"/>
+        <!-- Mark acute angle at C (150,150) -->
+        <text x="155" y="145" font-size="12" fill="black">\( \theta \)</text>
+        <!-- Label sides relative to angle C -->
+        <!-- Opposite (side AB) -->
+        <text x="45" y="100" font-size="12" fill="black" text-anchor="end">Opp</text>
+        <!-- Adjacent (side AC) -->
+        <text x="100" y="165" font-size="12" fill="black" text-anchor="middle">Adj</text>
+        <!-- Hypotenuse (side BC) -->
+        <text x="100" y="100" font-size="12" fill="black" text-anchor="middle">Hyp</text>
+      </svg>
+      
+      <!-- 2. The Unit Circle -->
+      <h4 style="margin-top:20px;">2. The Unit Circle</h4>
+      <p>
+        The unit circle (radius = 1) defines sine and cosine for all angles. For any angle \( \theta \):
+      </p>
+      <ul style="margin-left:20px;">
+        <li>\( \cos\theta \) is the x-coordinate.</li>
+        <li>\( \sin\theta \) is the y-coordinate.</li>
+      </ul>
+      <p>
+        Key angles include:
+      </p>
+      <ul style="margin-left:20px;">
+        <li>\( 0^\circ \): \( (1,0) \)</li>
+        <li>\( 30^\circ \): \( \left(\frac{\sqrt{3}}{2},\frac{1}{2}\right) \)</li>
+        <li>\( 45^\circ \): \( \left(\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}\right) \)</li>
+        <li>\( 60^\circ \): \( \left(\frac{1}{2},\frac{\sqrt{3}}{2}\right) \)</li>
+        <li>\( 90^\circ \): \( (0,1) \)</li>
+      </ul>
+      <h5 style="margin-top:15px;">Unit Circle Diagram</h5>
+      <svg width="250" height="250" viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg" style="display:block; margin:auto;">
+        <circle cx="125" cy="125" r="100" fill="none" stroke="black" stroke-width="2"/>
+        <line x1="125" y1="0" x2="125" y2="250" stroke="gray" stroke-dasharray="4"/>
+        <line x1="0" y1="125" x2="250" y2="125" stroke="gray" stroke-dasharray="4"/>
+        <text x="230" y="130" font-size="12" fill="black">0°</text>
+        <text x="130" y="20" font-size="12" fill="black">90°</text>
+        <text x="10" y="130" font-size="12" fill="black">180°</text>
+        <text x="130" y="240" font-size="12" fill="black">270°</text>
+      </svg>
+      <p class="exam-tip" style="text-align:center;">The unit circle shows how sine and cosine values correspond to coordinates for key angles.</p>
+      
+      <!-- 3. Fundamental Identities -->
+      <h4 style="margin-top:20px;">3. Fundamental Identities</h4>
+      <ul style="margin-left:20px;">
+        <li><strong>Pythagorean:</strong> \( \sin^2\theta + \cos^2\theta = 1 \)</li>
+        <li><strong>Quotient:</strong> \( \tan\theta = \frac{\sin\theta}{\cos\theta} \)</li>
+        <li><strong>Reciprocal:</strong>
+          <ul style="margin-left:20px;">
+            <li>\( \csc\theta = \frac{1}{\sin\theta} \)</li>
+            <li>\( \sec\theta = \frac{1}{\cos\theta} \)</li>
+            <li>\( \cot\theta = \frac{1}{\tan\theta} \)</li>
+          </ul>
+        </li>
+        <li><strong>Cofunction:</strong> \( \sin\theta = \cos(90^\circ-\theta) \)</li>
+        <li><strong>Even-Odd:</strong> \( \cos(-\theta)=\cos\theta \); \( \sin(-\theta)=-\sin\theta \); \( \tan(-\theta)=-\tan\theta \)</li>
+      </ul>
+      
+      <!-- 4. Angle Sum and Difference Formulas -->
+      <h4 style="margin-top:20px;">4. Angle Sum and Difference Formulas</h4>
+      <ul style="margin-left:20px;">
+        <li><strong>Sine:</strong> \( \sin(\alpha \pm \beta)=\sin\alpha\cos\beta\pm\cos\alpha\sin\beta \)</li>
+        <li><strong>Cosine:</strong> \( \cos(\alpha \pm \beta)=\cos\alpha\cos\beta\mp\sin\alpha\sin\beta \)</li>
+        <li><strong>Tangent:</strong> \( \tan(\alpha \pm \beta)=\frac{\tan\alpha\pm\tan\beta}{1\mp\tan\alpha\tan\beta} \)</li>
+      </ul>
+      
+      <!-- 5. Double and Half-Angle Formulas -->
+      <h4 style="margin-top:20px;">5. Double and Half-Angle Formulas</h4>
+      <ul style="margin-left:20px;">
+        <li><strong>Double Angle for Sine:</strong> \( \sin2\theta=2\sin\theta\cos\theta \)</li>
+        <li><strong>Double Angle for Cosine:</strong> \( \cos2\theta=\cos^2\theta-\sin^2\theta \) (or \(2\cos^2\theta-1\) / \(1-2\sin^2\theta\))</li>
+        <li><strong>Half-Angle:</strong>
+          <ul style="margin-left:20px;">
+            <li>\( \sin^2\theta=\frac{1-\cos2\theta}{2} \)</li>
+            <li>\( \cos^2\theta=\frac{1+\cos2\theta}{2} \)</li>
+          </ul>
+        </li>
+      </ul>
+      
+      <!-- 6. The Sine Rule and Cosine Rule -->
+      <h4 style="margin-top:20px;">6. Sine Rule and Cosine Rule</h4>
+      <ul style="margin-left:20px;">
+        <li><strong>Sine Rule:</strong> \( \frac{a}{\sin A}=\frac{b}{\sin B}=\frac{c}{\sin C} \)<br>
+            <em>Use when two angles and one side, or two sides and a non‑included angle are known.</em></li>
+        <li><strong>Cosine Rule:</strong> \( c^2=a^2+b^2-2ab\cos C \)<br>
+            <em>Use when two sides and the included angle are known or to determine an unknown side.</em></li>
+      </ul>
+      
+      <!-- 7. Diagrams for Triangles -->
+      <h4 style="margin-top:20px;">7. Triangle Diagrams</h4>
+      <p><strong>a. Right-Angled Triangle:</strong></p>
+      <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" style="display:block; margin:auto;">
+        <!-- Right triangle with vertices A(50,150), B(50,50), C(150,150) -->
+        <polygon points="50,150 50,50 150,150" fill="none" stroke="black" stroke-width="2"/>
+        <!-- Right angle marker at A -->
+        <polyline points="50,150 60,150 60,140" fill="none" stroke="black" stroke-width="2"/>
+        <!-- Labels relative to acute angle at C -->
+        <text x="155" y="145" font-size="12" fill="black">\( \theta \)</text>
+        <text x="45" y="100" font-size="12" fill="black" text-anchor="end">Opp</text>
+        <text x="100" y="165" font-size="12" fill="black" text-anchor="middle">Adj</text>
+        <text x="100" y="100" font-size="12" fill="black" text-anchor="middle">Hyp</text>
+      </svg>
+      <p class="exam-tip" style="text-align:center;">Right-angled triangle: Label the sides relative to the chosen acute angle (here at C).</p>
+      
+      <p><strong>b. Non-Right-Angled Triangle (for Sine/Cosine Rules):</strong></p>
+      <svg width="250" height="200" xmlns="http://www.w3.org/2000/svg" style="display:block; margin:auto;">
+        <!-- Triangle with vertices A(50,150), B(200,150), C(125,50) -->
+        <polygon points="50,150 200,150 125,50" fill="none" stroke="black" stroke-width="2"/>
+        <!-- Label vertices -->
+        <text x="45" y="160" font-size="12" fill="black">A</text>
+        <text x="205" y="160" font-size="12" fill="black">B</text>
+        <text x="125" y="40" font-size="12" fill="black" text-anchor="middle">C</text>
+        <!-- Label sides: side c is opposite C (between A & B), side a opposite A, side b opposite B -->
+        <text x="125" y="165" font-size="12" fill="black" text-anchor="middle">c</text>
+        <text x="85" y="100" font-size="12" fill="black" text-anchor="middle">b</text>
+        <text x="165" y="100" font-size="12" fill="black" text-anchor="middle">a</text>
+      </svg>
+      <p class="exam-tip" style="text-align:center;">Non-right-angled triangle: Use the sine and cosine rules; ensure angles sum to \(180^\circ\).</p>
+      
+      <!-- 8. Worked Examples -->
+      <h4 style="margin-top:20px;">8. Worked Examples</h4>
+      <p>
+        <strong>Example 1:</strong> Evaluate \( \sin(75^\circ) \) using the angle sum formula.<br>
+        <em>Solution:</em> Write \( 75^\circ=45^\circ+30^\circ \), then  
+      </p>
+      <p style="text-align:center;">\( \sin(75^\circ)=\sin45^\circ\cos30^\circ+\cos45^\circ\sin30^\circ \)</p>
+      <p>
+        Substitute \( \sin45^\circ=\frac{\sqrt{2}}{2} \), \( \cos30^\circ=\frac{\sqrt{3}}{2} \), \( \cos45^\circ=\frac{\sqrt{2}}{2} \), and \( \sin30^\circ=\frac{1}{2} \) to get  
+      </p>
+      <p style="text-align:center;">\( \sin(75^\circ)=\frac{\sqrt{6}+\sqrt{2}}{4} \)</p>
+      
+      <p>
+        <strong>Example 2:</strong> Solve \( \cos2\theta=0 \) for \( 0^\circ\le\theta<360^\circ \).<br>
+        <em>Solution:</em> \( \cos2\theta=0 \) when \( 2\theta=90^\circ,270^\circ,450^\circ,630^\circ \). Therefore,  
+      </p>
+      <p style="text-align:center;">\( \theta=45^\circ,135^\circ,225^\circ,315^\circ \)</p>
+      
+      <p>
+        <strong>Example 3:</strong> In a triangle with sides \( a=7 \) cm, \( b=8 \) cm, and \( c=9 \) cm, find angle \( C \) using the Cosine Rule.<br>
+        <em>Solution:</em>  
+      </p>
+      <p style="text-align:center;">\( \cos C=\frac{a^2+b^2-c^2}{2ab}=\frac{7^2+8^2-9^2}{2\cdot7\cdot8}=\frac{49+64-81}{112}=\frac{32}{112}=\frac{2}{7} \)</p>
+      <p>
+        Then, \( C=\cos^{-1}\left(\frac{2}{7}\right) \) (using a calculator).
+      </p>
+      
+      <!-- 9. Exam Tips and Common Pitfalls -->
+      <h4 style="margin-top:20px;">9. Exam Tips and Common Pitfalls</h4>
+      <ul style="margin-left:20px;">
+        <li>Clearly label diagrams with sides and angles.</li>
+        <li>Ensure your diagrams are drawn to scale for clarity.</li>
+        <li>Memorise standard trigonometric values and identities.</li>
+        <li>When applying the sine and cosine rules, check that the sum of the triangle's angles is \(180^\circ\).</li>
+        <li>Show all your working steps for partial credit.</li>
+      </ul>
+      
+      <!-- 10. Summary -->
+      <h4 style="margin-top:20px;">10. Summary</h4>
+      <p>
+        Trigonometry for Leaving Cert Higher Level Maths requires mastery of ratios, identities, and rules (sine and cosine). Clear diagrams—both for right-angled and non-right-angled triangles—aid in understanding and solving problems. Regular practice with worked examples and consistent revision of key formulas and identities will enhance your exam performance.
+      </p>
+      
+    </div>
+  </div>
+</div>
+    </div>
+    
+  </main>
   
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Leaving Cert Study Resources - Maths. All rights reserved.</p>
+    <div class="container">
+      <p class="text-center">&copy; 2025 Leaving Cert Revision Hub. All rights reserved.</p>
+    </div>
   </footer>
+  
+  <!-- Bootstrap and jQuery JS (CDN) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
 </body>
 </html>

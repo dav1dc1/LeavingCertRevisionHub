@@ -3,171 +3,842 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Biology - Leaving Cert 2025</title>
+  <title>Leaving Cert Revision Hub - Biology</title>
+  <!-- Google Fonts: Roboto -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <!-- Bootstrap CSS (CDN) -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <style>
-    /* You can either use an external CSS file or inline CSS here. This example uses inline CSS for demonstration. */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --primary-color: #1abc9c;
+      --secondary-color: #343a40;
+      --accent-color: #495057;
+      --background-color: #f8f9fa;
+    }
     body {
       font-family: 'Roboto', sans-serif;
-      background: #f8f9fa;
-      color: #333;
-      line-height: 1.6;
-      padding: 20px;
+      background: var(--background-color);
+      color: var(--secondary-color);
+      padding-top: 90px;
     }
     header {
+      background: linear-gradient(135deg, var(--secondary-color), #212529);
+      color: #fff;
+      padding: 40px 20px;
       text-align: center;
-      padding: 20px;
-      background: #343a40;
-      color: #fff;
-      margin-bottom: 20px;
-    }
-    header h1 { font-size: 2.5rem; }
-    nav {
-      background: #495057;
-      padding: 10px;
-      margin-bottom: 20px;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    nav ul li { margin: 0 15px; }
-    nav ul li a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-    nav ul li a:hover { color: #1abc9c; }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-      background: #fff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    h2.subject-title {
-      background: #1abc9c;
-      color: #fff;
-      padding: 10px;
-      margin: 20px 0;
+      margin-bottom: 30px;
       border-radius: 4px;
-      text-align: center;
     }
-    section.topic {
-      margin-bottom: 20px;
-      padding: 10px 0;
-      border-bottom: 1px solid #ddd;
-    }
-    section.topic:last-child { border-bottom: none; }
-    section.topic h3 {
-      font-size: 1.8rem;
-      margin-bottom: 5px;
-      color: #343a40;
-    }
-    section.topic p {
-      margin-bottom: 5px;
-      padding-left: 10px;
-    }
-    section.topic ul {
-      margin-left: 20px;
+    header h1 {
+      font-size: 2.8rem;
       margin-bottom: 10px;
     }
-    section.topic ul li {
-      margin-bottom: 5px;
+    header p {
+      font-size: 1.3rem;
+    }
+    nav.fixed-top {
+      background: var(--accent-color);
+      padding: 10px 0;
+      text-align: center;
+    }
+    nav.fixed-top a {
+      color: #fff;
+      font-size: 1.1rem;
+      margin: 0 15px;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav.fixed-top a:hover {
+      color: var(--primary-color);
+    }
+    .subject-title {
+      background: var(--primary-color);
+      color: #fff;
+      padding: 15px;
+      border-radius: 4px;
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+    .accordion .card-header {
+      background: var(--primary-color);
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .accordion .card-body {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      background: #fff;
+    }
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: var(--secondary-color);
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 5px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    .exam-tip {
+      background: rgba(26,188,156,0.15);
+      border-left: 4px solid var(--primary-color);
+      padding: 8px 12px;
+      margin: 10px 0;
+      font-style: italic;
+      color: #555;
+    }
+    .info-list {
+      list-style: disc;
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+    .info-list li {
+      margin-bottom: 4px;
     }
     footer {
-      text-align: center;
-      padding: 10px;
-      background: #343a40;
+      background: var(--secondary-color);
       color: #fff;
-      margin-top: 20px;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+      border-radius: 4px;
+      font-size: 1rem;
     }
-    /* Responsive */
-    @media (max-width: 768px) {
-      nav ul { flex-direction: column; }
-      nav ul li { margin: 10px 0; }
+    /* Arrow Icon Styling */
+    .accordion .card-header .fa {
+      transition: transform 0.3s;
+    }
+    .accordion .card-header.collapsed .fa {
+      transform: rotate(0deg);
+    }
+    .accordion .card-header:not(.collapsed) .fa {
+      transform: rotate(180deg);
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Biology - Leaving Cert 2025</h1>
+  <header class="banner" style="position: relative; overflow: hidden; height: 40vh; background: none;">
+    <img src="https://images.unsplash.com/photo-1530213786676-41ad9f7736f6?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJpb2xvZ3l8ZW58MHx8MHx8fDA%3D" 
+         alt="Biology Illustration" 
+         class="img-fluid w-100" 
+         style="height: 100%; object-fit: cover; border: 0; outline: 0; box-shadow: none;">
+    <div class="banner-content" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+      <div style="padding: 20px 30px; border-radius: 4px; background: rgba(255,255,255,0.8);">
+        <h1 style="font-size: 2.5rem; font-weight: 700; color: #343a40; margin: 0;">Leaving Cert Biology Revision Hub</h1>
+        <p style="font-size: 1.2rem; color: #343a40; margin: 10px 0 0;">
+          Your comprehensive, exam-focused resource for mastering Biology
+        </p>
+      </div>
+    </div>
   </header>
-  
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="french.html">French</a></li>
-      <li><a href="maths.html">Maths</a></li>
-      <li><a href="irish.html">Irish</a></li>
-      <li><a href="music.html">Music</a></li>
-      <li><a href="english.html">English</a></li>
-      <li><a href="geography.html">Geography</a></li>
-    </ul>
+  <!-- Fixed Navigation -->
+  <nav class="fixed-top">
+    <div class="container">
+      <a href="index.html">Home</a>
+      <a href="biology.html">Biology</a>
+      <a href="french.html">French</a>
+      <a href="maths.html">Maths</a>
+      <a href="irish.html">Irish</a>
+      <a href="music.html">Music</a>
+      <a href="english.html">English</a>
+      <a href="geography.html">Geography</a>
+    </div>
   </nav>
-  
-  <div class="container">
-    <h2 class="subject-title">Advanced Biology Topics</h2>
-    
-    <!-- Example Topic Sections -->
-    <section class="topic">
-      <h3>Cell Biology</h3>
-      <p><strong>Cell Structure:</strong> Detailed study of the nucleus, mitochondria, endoplasmic reticulum, Golgi apparatus, lysosomes, vacuoles, and the cytoskeleton. Understand the role of membranes and transport mechanisms.</p>
-      <p><strong>Cell Function:</strong> Explore cellular respiration (glycolysis, Krebs cycle, and oxidative phosphorylation), photosynthesis (light-dependent and light-independent reactions), and cell division (mitosis and meiosis) with diagrams and step-by-step processes.</p>
-    </section>
-    
-    <section class="topic">
-      <h3>Genetics & Molecular Biology</h3>
-      <p><strong>Mendelian Genetics:</strong> In-depth explanation of dominant, recessive, codominant, and incomplete dominance traits, complete with Punnett squares and probability exercises.</p>
-      <p><strong>Molecular Genetics:</strong> Study DNA structure and replication, transcription, RNA processing, translation, gene expression regulation, and mutation types. Includes real exam questions and model answers.</p>
-      <ul>
-        <li>DNA Replication: Enzymes involved, replication fork mechanics.</li>
-        <li>Transcription & Translation: Detailed stages and regulation.</li>
-        <li>Genetic Mutations: Types, causes, and consequences.</li>
-      </ul>
-    </section>
-    
-    <section class="topic">
-      <h3>Evolutionary Biology</h3>
-      <p><strong>Natural Selection:</strong> Darwin’s theory, adaptation, survival of the fittest, and speciation with case studies.</p>
-      <p><strong>Modern Evolutionary Synthesis:</strong> Genetic drift, gene flow, mutation, and the impact of environmental changes. Include diagrams and exam-style questions.</p>
-    </section>
-    
-    <section class="topic">
-      <h3>Ecology & Environment</h3>
-      <p><strong>Ecosystem Dynamics:</strong> Energy flow through food chains and webs, trophic levels, ecological pyramids, and biogeochemical cycles.</p>
-      <p><strong>Biodiversity & Conservation:</strong> The importance of biodiversity, human impacts on ecosystems, and conservation strategies aligned with current exam guidelines.</p>
-    </section>
-    
-    <section class="topic">
-      <h3>Human Physiology</h3>
-      <p><strong>System Functions:</strong> Detailed notes on the circulatory, respiratory, digestive, nervous, endocrine, and immune systems. Include flow charts, diagrams, and key exam points.</p>
-    </section>
-    
-    <!-- Additional topics can be added below to greatly expand content -->
-    <section class="topic">
-      <h3>Plant Biology</h3>
-      <p><strong>Photosynthesis:</strong> Light reactions, Calvin cycle, and factors affecting photosynthesis.</p>
-      <p><strong>Plant Physiology:</strong> Water transport, transpiration, and nutrient uptake.</p>
-    </section>
-    
-    <section class="topic">
-      <h3>Advanced Data Analysis in Biology</h3>
-      <p>Interpretation of biological data, statistical methods used in experiments, and evaluation of research studies – complete with sample exam questions.</p>
-    </section>
-    
-    <!-- Repeat similar detailed sections to build up extensive content -->
-    <!-- ... (Imagine 10–15 such sections per subject, each with multiple paragraphs, lists, diagrams, and exam tips) ... -->
-    
-  </div>
-  
+
+  <!-- Main Content -->
+  <main class="container">
+    <div class="subject-title">Biology Revision – Detailed Notes</div>
+    <p class="mb-4">Click each topic below to reveal concise, exam-focused notes.</p>
+
+    <div id="bioAccordion" class="accordion">
+      <!-- 1. The characteristics of life -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading1">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+              1. The Characteristics of Life <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>Living organisms exhibit organization, metabolism, growth, reproduction, response to stimuli, homeostasis, and evolution. These shared characteristics define life.</p>
+            <p class="exam-tip">Use examples from diverse organisms to illustrate these traits.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. The scientific method -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading2">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+              2. The Scientific Method <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>The scientific method is a systematic approach to inquiry that includes observation, hypothesis formulation, experimentation, data analysis, and conclusion.</p>
+            <p class="exam-tip">Highlight how controls and variables ensure the validity of an experiment.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Variation and evolution -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading3">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+              3. Variation and Evolution <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>Genetic variation within populations provides the material for natural selection and evolution. Factors such as mutations and gene flow lead to diverse adaptations over generations.</p>
+            <p class="exam-tip">Include examples like antibiotic resistance to illustrate evolution.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Ecology -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading4">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+              4. Ecology <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>Ecology examines interactions between organisms and their environment, including food webs, energy flow, nutrient cycling, and the impact of human activities.</p>
+            <p class="exam-tip">Diagram ecosystems and discuss key ecological processes.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Cell diversity -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading5">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+              5. Cell Diversity <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>Cells vary widely among organisms. Prokaryotic cells are simple and lack a nucleus, whereas eukaryotic cells have complex structures with specialized organelles.</p>
+            <p class="exam-tip">Contrast the cell types with clear examples.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Cell structure -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading6">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+              6. Cell Structure <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse6" class="collapse" aria-labelledby="heading6" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>This section details the internal organization of eukaryotic cells—nucleus, mitochondria, ER, Golgi apparatus, lysosomes, etc.—and explains their functions.</p>
+            <p class="exam-tip">Label and study diagrams to memorize each organelle’s role.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Monera (Bacteria) -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading7">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+              7. Monera (Bacteria) <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse7" class="collapse" aria-labelledby="heading7" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>Bacteria are unicellular, prokaryotic organisms. They reproduce asexually and play crucial roles in nutrient cycling, but some can also cause diseases.</p>
+            <p class="exam-tip">Discuss both beneficial and pathogenic roles.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. Amoeba -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading8">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
+              8. Amoeba <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse8" class="collapse" aria-labelledby="heading8" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>Amoeba are unicellular eukaryotes that move by forming pseudopodia. They serve as models for studying cellular movement and ingestion.</p>
+            <p class="exam-tip">Include the process of phagocytosis in your answer.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. Viruses -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading9">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
+              9. Viruses <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse9" class="collapse" aria-labelledby="heading9" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>Viruses are infectious agents that require host cells for replication. They contain genetic material (DNA or RNA) and a protein coat, and they can cause disease.</p>
+            <p class="exam-tip">Explain why viruses are not considered fully living.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10. Fungi -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading10">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
+              10. Fungi <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse10" class="collapse" aria-labelledby="heading10" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>Fungi are eukaryotic organisms (yeasts, molds, mushrooms) that play essential roles in decomposition and symbiotic relationships. They have a distinct mode of nutrition compared to plants.</p>
+            <p class="exam-tip">Contrast fungal nutrition with that of plants.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 11. Genetic Crosses -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading11">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse11" aria-expanded="false" aria-controls="collapse11">
+              11. Genetic Crosses <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse11" class="collapse" aria-labelledby="heading11" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>Genetic crosses, using Punnett squares, predict the inheritance of traits by considering dominant and recessive alleles.</p>
+            <p class="exam-tip">Practice with monohybrid and dihybrid crosses, and always label your diagrams.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12. Genetic Engineering -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading12">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse12" aria-expanded="false" aria-controls="collapse12">
+              12. Genetic Engineering <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse12" class="collapse" aria-labelledby="heading12" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>Genetic engineering involves modifying an organism’s DNA using techniques like recombinant DNA, CRISPR, and gene cloning. It has diverse applications in medicine, agriculture, and research.</p>
+            <p class="exam-tip">Discuss both the scientific process and ethical implications.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 13. Diffusion and Osmosis -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading13">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse13" aria-expanded="false" aria-controls="collapse13">
+              13. Diffusion and Osmosis <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse13" class="collapse" aria-labelledby="heading13" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>Diffusion is the movement of molecules from high to low concentration, while osmosis is the diffusion of water through a semipermeable membrane. Both are vital for cellular function.</p>
+            <p class="exam-tip">Include diagrams to illustrate these processes and factors affecting them.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 14. Food -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading14">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse14" aria-expanded="false" aria-controls="collapse14">
+              14. Food <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse14" class="collapse" aria-labelledby="heading14" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>Food consists of carbohydrates, proteins, fats, vitamins, and minerals. It provides energy and materials for growth, repair, and metabolism.</p>
+            <p class="exam-tip">Discuss the role of each nutrient and their importance in the diet.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 15. Enzymes -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading15">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse15" aria-expanded="false" aria-controls="collapse15">
+              15. Enzymes <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse15" class="collapse" aria-labelledby="heading15" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>Enzymes are catalysts that accelerate biochemical reactions. They work on the lock-and-key principle and have optimal conditions such as specific temperatures and pH ranges.</p>
+            <p class="exam-tip">Describe how enzymes lower activation energy and include examples like digestive enzymes.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 16. Respiration -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading16">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse16" aria-expanded="false" aria-controls="collapse16">
+              16. Respiration <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse16" class="collapse" aria-labelledby="heading16" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>Respiration is the process by which cells convert glucose and oxygen into ATP, releasing carbon dioxide and water. It includes glycolysis, the Krebs cycle, and oxidative phosphorylation.</p>
+            <p class="exam-tip">Differentiate between aerobic and anaerobic respiration with appropriate diagrams.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 17. Classification and Heredity -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading17">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse17" aria-expanded="false" aria-controls="collapse17">
+              17. Classification and Heredity <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse17" class="collapse" aria-labelledby="heading17" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>This topic covers the taxonomic classification of organisms and the basic principles of heredity, explaining how traits are passed from parents to offspring.</p>
+            <p class="exam-tip">Memorize the taxonomic ranks and use clear examples to illustrate heredity.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 18. DNA & RNA -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading18">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse18" aria-expanded="false" aria-controls="collapse18">
+              18. DNA & RNA <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse18" class="collapse" aria-labelledby="heading18" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>DNA stores genetic information in a double helix structure, while RNA plays a key role in protein synthesis. Understand nucleotide pairing, replication, transcription, and translation.</p>
+            <p class="exam-tip">Include diagrams to illustrate these processes.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 19. Cell Division -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading19">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse19" aria-expanded="false" aria-controls="collapse19">
+              19. Cell Division <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse19" class="collapse" aria-labelledby="heading19" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>Cell division occurs via mitosis (for growth and repair) and meiosis (for sexual reproduction), ensuring genetic continuity and diversity.</p>
+            <p class="exam-tip">Practice drawing and labeling the stages of mitosis and meiosis.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 20. Photosynthesis -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading20">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse20" aria-expanded="false" aria-controls="collapse20">
+              20. Photosynthesis <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse20" class="collapse" aria-labelledby="heading20" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>Photosynthesis is the process by which plants convert light energy into chemical energy. It involves light-dependent reactions and the Calvin cycle within chloroplasts.</p>
+            <p class="exam-tip">Be sure to label a chloroplast diagram and explain the key stages.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 21. Structure of Flowering Plants -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading21">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse21" aria-expanded="false" aria-controls="collapse21">
+              21. Structure of Flowering Plants <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse21" class="collapse" aria-labelledby="heading21" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>This topic details the anatomy of flowering plants, including roots, stems, leaves, and reproductive structures, explaining their roles in photosynthesis and reproduction.</p>
+            <p class="exam-tip">Practice labeling diagrams of a flower.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 22. Plant Responses -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading22">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse22" aria-expanded="false" aria-controls="collapse22">
+              22. Plant Responses <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse22" class="collapse" aria-labelledby="heading22" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>Plants respond to stimuli such as light (phototropism), gravity (gravitropism), and touch (thigmotropism) through hormone regulation (auxins).</p>
+            <p class="exam-tip">Discuss how these responses benefit plant survival.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 23. Vegetative Propagation -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading23">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse23" aria-expanded="false" aria-controls="collapse23">
+              23. Vegetative Propagation <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse23" class="collapse" aria-labelledby="heading23" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>Vegetative propagation is asexual reproduction through mechanisms like cuttings, runners, and tubers. It produces clones of the parent plant, ensuring genetic consistency.</p>
+            <p class="exam-tip">Emphasize its agricultural applications.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 24. Sexual Reproduction in Flowering Plants -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading24">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse24" aria-expanded="false" aria-controls="collapse24">
+              24. Sexual Reproduction in Flowering Plants <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse24" class="collapse" aria-labelledby="heading24" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>Sexual reproduction in flowering plants involves the formation of male and female gametes, pollination, fertilization, and seed development. The structure of the flower is key to this process.</p>
+            <p class="exam-tip">Label a diagram of a flower’s reproductive parts.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 25. Transport, Food Storage & Gas Exchange in Flowering Plants -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading25">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse25" aria-expanded="false" aria-controls="collapse25">
+              25. Transport, Food Storage & Gas Exchange in Flowering Plants <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse25" class="collapse" aria-labelledby="heading25" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>This topic discusses the vascular system in plants: xylem transports water and minerals, while phloem distributes sugars. It also covers how plants store food and exchange gases through stomata.</p>
+            <p class="exam-tip">Link these processes to overall plant health and survival.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 26. Homeostasis -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading26">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse26" aria-expanded="false" aria-controls="collapse26">
+              26. Homeostasis <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse26" class="collapse" aria-labelledby="heading26" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>Homeostasis refers to maintaining a stable internal environment despite external changes. It involves regulatory processes such as temperature control and water balance.</p>
+            <p class="exam-tip">Use examples like human thermoregulation to illustrate the concept.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 27. The Lymphatic System -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading27">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse27" aria-expanded="false" aria-controls="collapse27">
+              27. The Lymphatic System <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse27" class="collapse" aria-labelledby="heading27" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>The lymphatic system, a component of the immune system, transports lymph to remove toxins and supports immunity through lymph nodes and vessels.</p>
+            <p class="exam-tip">Discuss its role in both waste removal and immune defense.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 28. Blood -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading28">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse28" aria-expanded="false" aria-controls="collapse28">
+              28. Blood <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse28" class="collapse" aria-labelledby="heading28" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>Blood is a fluid tissue composed of red and white blood cells, platelets, and plasma. It transports oxygen, nutrients, and waste, while also playing a key role in the immune system.</p>
+            <p class="exam-tip">Be familiar with the functions of each blood component.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 29. The Heart and Blood Vessels -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading29">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse29" aria-expanded="false" aria-controls="collapse29">
+              29. The Heart and Blood Vessels <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse29" class="collapse" aria-labelledby="heading29" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>This topic details the structure of the heart and the function of arteries, veins, and capillaries in circulating blood throughout the body.</p>
+            <p class="exam-tip">Practice diagram labeling and explain the systemic vs. pulmonary circuits.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 30. Excretion -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading30">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse30" aria-expanded="false" aria-controls="collapse30">
+              30. Excretion <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse30" class="collapse" aria-labelledby="heading30" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>Excretion is the process of eliminating waste from the body. In humans, the kidneys filter blood to produce urine, which helps maintain fluid and electrolyte balance.</p>
+            <p class="exam-tip">Focus on the structure and function of the nephron.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 31. Human Defence System -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading31">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse31" aria-expanded="false" aria-controls="collapse31">
+              31. Human Defence System <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse31" class="collapse" aria-labelledby="heading31" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>The human defence system, part of the immune system, protects against pathogens through innate and adaptive responses including white blood cells, antibodies, and lymphoid organs.</p>
+            <p class="exam-tip">Highlight the differences between innate and adaptive immunity.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 32. Human Breathing -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading32">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse32" aria-expanded="false" aria-controls="collapse32">
+              32. Human Breathing <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse32" class="collapse" aria-labelledby="heading32" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>Human breathing involves the mechanics of inhalation and exhalation, facilitating gas exchange in the lungs through the alveoli.</p>
+            <p class="exam-tip">Include a diagram of the respiratory system with emphasis on the diaphragm.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 33. Human Nutrition -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading33">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse33" aria-expanded="false" aria-controls="collapse33">
+              33. Human Nutrition <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse33" class="collapse" aria-labelledby="heading33" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>Nutrition studies the intake and utilization of food, covering macronutrients (carbohydrates, proteins, fats) and micronutrients (vitamins, minerals). It is essential for energy production and overall health.</p>
+            <p class="exam-tip">Discuss the effects of nutrient deficiencies on health.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 34. The Nervous System -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading34">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse34" aria-expanded="false" aria-controls="collapse34">
+              34. The Nervous System <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse34" class="collapse" aria-labelledby="heading34" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>The nervous system consists of the brain, spinal cord, and peripheral nerves. It controls and coordinates bodily functions by transmitting electrical signals.</p>
+            <p class="exam-tip">Study the structure of neurons and the process of synaptic transmission.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 35. The Senses -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading35">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse35" aria-expanded="false" aria-controls="collapse35">
+              35. The Senses <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse35" class="collapse" aria-labelledby="heading35" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>The human senses (sight, hearing, taste, smell, touch) enable the perception of the environment. This topic covers the basic anatomy and physiology behind each sense.</p>
+            <p class="exam-tip">Prepare to explain how sensory signals are processed by the brain.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 36. The Endocrine System -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading36">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse36" aria-expanded="false" aria-controls="collapse36">
+              36. The Endocrine System <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse36" class="collapse" aria-labelledby="heading36" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>The endocrine system regulates body functions through hormones. It includes glands such as the thyroid, adrenal, and pituitary, which release hormones that affect metabolism, growth, and reproduction.</p>
+            <p class="exam-tip">Memorize major hormones and their functions.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 37. The Skeletal System and Muscles -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading37">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse37" aria-expanded="false" aria-controls="collapse37">
+              37. The Skeletal System and Muscles <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse37" class="collapse" aria-labelledby="heading37" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>This section details the human skeletal system, which provides structure and protection, and the muscular system, which facilitates movement.</p>
+            <p class="exam-tip">Review diagrams of the human skeleton and muscle groups.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 38. Human Reproduction -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading38">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse38" aria-expanded="false" aria-controls="collapse38">
+              38. Human Reproduction <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse38" class="collapse" aria-labelledby="heading38" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>Human reproduction involves the structure and function of the reproductive systems, fertilization, and embryonic development. Both male and female systems have distinct roles in this process.</p>
+            <p class="exam-tip">Focus on the anatomical differences and hormonal regulation.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 39. Biology Definitions -->
+      <div class="card">
+        <div class="card-header collapsed" id="heading39">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapse39" aria-expanded="false" aria-controls="collapse39">
+              39. Expirements <i class="fas fa-chevron-down"></i>
+            </button>
+          </h5>
+        </div>
+        <div id="collapse39" class="collapse" aria-labelledby="heading39" data-parent="#bioAccordion">
+          <div class="card-body">
+            <p>This section provides key definitions for vital biological terms such as homeostasis, metabolism, genotype, phenotype, and adaptation. Mastery of these terms is essential for exam success.</p>
+            <p class="exam-tip">Create your own flashcards for regular self-testing.</p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </main>
+
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Leaving Cert Study Resources - Biology. All rights reserved.</p>
+    <div class="container">
+      <p class="text-center">&copy; 2025 Leaving Cert Revision Hub - Biology. All rights reserved.</p>
+    </div>
   </footer>
+
+  <!-- Bootstrap and jQuery JS (CDN) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Toggle arrow icons on collapse/expand
+    $('#bioAccordion').on('show.bs.collapse', function(e) {
+      $(e.target).prev('.card-header').find('.fa').removeClass('fa-chevron-down').addClass('fa-chevron-up');
+    });
+    $('#bioAccordion').on('hide.bs.collapse', function(e) {
+      $(e.target).prev('.card-header').find('.fa').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+    });
+  </script>
 </body>
 </html>

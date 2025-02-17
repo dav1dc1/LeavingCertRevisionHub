@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-V5JWNT7TW7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-V5JWNT7TW7');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V5JWNT7TW7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V5JWNT7TW7');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Leaving Cert Revision Hub</title>
@@ -20,9 +19,10 @@
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <style>
+    /* Hide icons */
     i.fas, i.fab, i.far {
-  display: none !important;
-}
+      display: none !important;
+    }
     :root {
       --primary-color: #1abc9c;
       --secondary-color: #343a40;
@@ -142,6 +142,18 @@
       text-align: center;
       padding: 20px;
       margin-top: 30px;
+    }
+    /* Responsive adjustments for the header banner */
+    @media (max-width: 768px) {
+      header.banner .banner-content div {
+        padding: 10px 15px;
+      }
+      header.banner .banner-content h1 {
+        font-size: 2rem;
+      }
+      header.banner .banner-content p {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
